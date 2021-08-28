@@ -1,0 +1,102 @@
+header{
+    font-size: small;
+    padding: 5px;
+    text-align: right;
+    color: black;
+    background-color:skyblue;
+}
+
+.nav{
+    background-color: white;
+}
+.nav a{
+    font-weight: 400;
+    color: black;
+    padding: 20px;
+    text-decoration: none;
+}
+
+.nav a:hover{
+    color:skyblue;
+}
+
+.nav a:active{
+    color: skyblue
+}
+
+h4{
+    text-align: center;
+}
+
+table{
+    margin-left: 30%;
+}
+
+.table2{
+    margin-left: 27%;
+}
+
+th{
+	text-align:center;
+	padding: 5px;
+    font-weight: 400;
+}
+
+.buttons {
+    align-content: center;
+	color:black;
+    background-color:skyblue;
+    text-decoration:none;;
+    border:none;
+    padding:8px 14px;
+    font-size:15px;
+    margin-right: 10px;
+}
+.buttons:hover{
+
+	color:black;
+    background-color:whitesmoke;
+    border: 2px solid black;
+}
+
+.mandatory{
+    color:red;
+}
+
+footer{
+    background-color:skyblue;
+   text-align:center;
+   color: black;  
+   font-size: 10px;
+}
+
+a{
+    text-decoration: none;
+    color:black;
+    padding-left: 30px;
+}
+
+input[type = "text"]{
+    width: 200px;
+}
+
+input[type = "password"]{
+    width:200px;
+}
+
+.bloodGroup{
+    width:200px;
+}
+
+input[type = "email"]{
+    width:200px;
+}
+
+input[type = "date"]{
+    width: 200px;
+}
+
+.findUs{
+    font-weight: 500;
+    font-size: medium;
+}
