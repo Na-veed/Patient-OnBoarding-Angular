@@ -28,6 +28,36 @@ export class PatientService {
     )
   }
 
+  loginPatient(patientEmail:string,password:string): Observable<Patient>{
+    return this.httpClient.get<Patient>(patientUrl+"authenticate"+`${patientEmail}`+`${password}`).pipe(
+      retry(1),
+      catchError(this.errorHandler)
+    )
+  }
+
+  
+  updatePatient(patient:Patient):Observable<Patient>{
+    return this.httpClient.put<Patient>(patientUrl+"update",patient,this.httpOptions).pipe(
+      retry(1),
+      catchError(this.errorHandler)
+    )
+  }
+
+  getPatientByEmail(patientEmail:string):Observable<Patient>{
+    return this.httpClient.get<Patient>(patientUrl + "").pipe(
+      retry(1),
+      catchError(this.errorHandler)
+    )
+  }
+
+  getAllPatient(patient:Patient):Observable<Patient[]>{
+    return this.httpClient.get<Patient[]>(patientUrl + "").pipe(
+      retry(1),
+      catchError(this.errorHandler)
+    )
+  
+  }
+
   errorHandler(error: { error: { message: string; }; status: any; message: any; }) {
     let errorMessage = '';
     if (error.error instanceof ErrorEvent) {
