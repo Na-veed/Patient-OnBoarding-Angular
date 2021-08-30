@@ -4,7 +4,8 @@ import { Observable, throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
 import { Patient } from '../model/patient.ts';
 
-const patientUrl:string =  "";
+const patientUrl:string =  "http://localhost:9090/patients";
+const save='save'
 @Injectable
 ({
   providedIn: 'root'
@@ -21,7 +22,8 @@ export class PatientService {
   constructor(public httpClient:HttpClient) { }
 
   addPatient(patient:Patient): Observable<Patient>{
-    return this.httpClient.post<Patient>(patientUrl+ "save",patient,this.httpOptions).pipe
+    console.log(patient)
+    return this.httpClient.post<Patient>(`${patientUrl}/${save}`,patient,this.httpOptions).pipe
     (
       retry(1),
       catchError(this.errorHandler)

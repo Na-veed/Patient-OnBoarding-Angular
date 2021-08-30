@@ -11,10 +11,10 @@
 <body align="center">
     <div class="container">
         <div class="nav">
-            <a href="">HOME</a>
-            <a href="contactUsPage">CONTACT US</a>
-            <a href="aboutUsPage">ABOUT US</a>
-            <a href="loginPage">LOGIN</a>
+            <a routerLink="">HOME</a>
+            <a routerLink="contactUsPage">CONTACT US</a>
+            <a routerLink="aboutUsPage">ABOUT US</a>
+            <a routerLink="loginPage">LOGIN</a>
         </div>
         <br>
         <h4>REGISTRATION SECTION</h4>
@@ -72,9 +72,9 @@
                        </div> -->
                         
                     <tr>
-                        <th>CONFIRM PASSWORD</th>
+                        <th>PASSWORD</th>
                         <th>:</th>
-                        <th><input type="password" placeholder="Enter your new password"><span class="mandatory" formControlName = "password">
+                        <th><input type="password" placeholder="Enter your password" formControlName = "password"><span class="mandatory" >
                                 *</span></th>
                         <th
                             *ngIf="patientForm.get('password').hasError('required') && patientForm.get('password').touched">
@@ -87,7 +87,7 @@
                     <tr>
                         <th>CONFIRM PASSWORD</th>
                         <th>:</th>
-                        <th><input type="password" placeholder="Confirm your password..."><span class="mandatory" formControlName = "confirmPassword">
+                        <th><input type="password" placeholder="Confirm your password..." formControlName = "confirmPassword"><span class="mandatory" >
                                 *</span></th>
                         <th
                             *ngIf="patientForm.get('confirmPassword').hasError('required') && patientForm.get('confirmPassword').touched">
@@ -98,7 +98,7 @@
                     <tr>
                         <th>PHONE NUMBER</th>
                         <th>:</th>
-                        <th><input type="text" placeholder="Enter your phone number" formControlName="phoneNumber"><span
+                        <th><input type="number" placeholder="Enter your phone number" formControlName="phoneNumber"><span
                                 class="mandatory"> *</span></th>
                         <th
                             *ngIf="patientForm.get('phoneNumber').hasError('required') && patientForm.get('phoneNumber').touched">
@@ -120,7 +120,7 @@
                     <tr>
                         <th>ALTERNATE PHONE NUMBER</th>
                         <th>:</th>
-                        <th><input type="text" formControlName="alternatePhoneNumber"></th>
+                        <th><input type="number" formControlName="alternatePhoneNumber"></th>
                     </tr>
                     <tr>
                         <th>ALTERNATE MAIL ID</th>
@@ -132,11 +132,14 @@
                         <th>:</th>
                         <th><select calss="bloodGroup" formControlName="bloodGroup">
                                 <option value="null">---Select Blood group---</option>
-                                <option value="O+">O positive</option>
-                                <option value="B+">B positive</option>
-                                <option value="B-">B negative</option>
-                                <option value="AB+">AB positive</option>
-                                <option value="AB-">AB negative</option>
+                                <option value="A+">A+</option>
+                                <option value="O+">O+</option>
+                                <option value="B+">B+</option>
+                                <option value="AB+">AB+</option>
+                                <option value="A-">A-</option>
+                                <option value="O-">O-</option>
+                                <option value="B-">B-</option>
+                                <option value="AB-">AB-</option>
                                 <option value="others">Others</option>
                             </select>
                         </th>
@@ -144,7 +147,7 @@
 
                 </table>
                 <br>
-                <button class="buttons" type="submit">SUBMIT</button>
+                <button class="buttons" type="submit" [disabled]='patientForm.invalid' (click)="addPatient()">SUBMIT</button>
                 <button class="buttons" type="reset">CLEAR</button>
             </fieldset>
         </form>

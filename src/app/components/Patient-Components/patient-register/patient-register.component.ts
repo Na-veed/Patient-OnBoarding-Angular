@@ -18,21 +18,25 @@ export class PatientRegisterComponent implements OnInit {
     this.patientForm = this.formBuilder.group({
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
-      password: ['', [Validators.required, Validators.minLength(6)]],
       patientEmail: ['', Validators.required],
-      phoneNumber: ['', Validators.required],
-      dateOfBirth: [''],
-      alternatePhoneNumber: [''],
+      password: ['', [Validators.required, Validators.minLength(6)]],
+      confirmPassword:[''],
       alternateEmail: [''],
+      phoneNumber: ['', Validators.required],
+      alternatePhoneNumber: [''],
+      dateOfBirth: [''],
       bloodGroup: ['']
+      
 
     })
   }
 
   addPatient() {
     this.patientService.addPatient(this.patientForm.value).subscribe(() => {
-      
-    }, error => this.errorMessage = error
+    }, error =>{
+      console.log(this.patientForm.value)
+      this.errorMessage = error
+    } 
     )
 
   }
