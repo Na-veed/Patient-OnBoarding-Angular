@@ -8,8 +8,8 @@ export class Patient {
     dateOfBirth?:Date;
     bloodGroup?:string;
     city?:string;
-    phoneNumber?:string;
-    alternatePhoneNumber?:string;
+    phoneNumber?:number;
+    alternatePhoneNumber?:number;
     alternateEmail?:string;
     patientWeight?:number;
     patientHeight?:number;
