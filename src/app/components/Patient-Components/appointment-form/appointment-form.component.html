@@ -1,0 +1,82 @@
+<header>
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-phone">
+        <path
+            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+        </path>
+    </svg>
+    - 044-2388 0477
+</header>
+
+<body align="center">
+    <div class="container">
+        <div class="nav">
+            <a routerLink="">HOME</a>
+            <a routerLink="patientDashboard">DASHBOARD</a>
+            <a routerLink="aboutUsPage">ABOUT US</a>
+            <a routerLink="contactUsPage">CONTACT US</a>
+        </div>
+        <br>
+        <br>
+        <h5>BOOK AN APPOINTMENT</h5>
+        <p>Booking an appointment with one of our expert is just made easy with our application</p>
+        <br>
+        <form novalidate [formGroup]="appointmentForm" (ngSubmit)="addAppointment()">
+            <fieldset>
+                <table>
+                    <tr>
+                        <th>
+                            EMAIL
+                        </th>
+                        <th>
+                            :
+                        </th>
+                        <th>
+                            <input type="email">
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>
+                            SPECIALISTS
+                        </th>
+                        <th>
+                            :
+                        </th>
+                        <th>
+                            <select class="select">
+                                <option value="General">Normal consulting</option>
+                                <option value="Dermatologist">Dermatologist</option>
+                                <option value="Dentist">Dentist</option>
+                                <option value="Cardiologist">Cardiologist</option>
+                            </select>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>
+                            SYMPTOMS
+                        </th>
+                        <th>
+                            :
+                        </th>
+                        <th>
+                            <textarea></textarea>
+                        </th>
+                    </tr>
+                </table>
+            </fieldset>
+            <br>
+            <button class="buttons" type="submit">BOOK</button>
+            <button class="buttons" type='reset'>CLEAR</button>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            
+        </form>
+    </div>
+</body>

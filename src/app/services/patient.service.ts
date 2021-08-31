@@ -30,6 +30,14 @@ export class PatientService {
     )
   }
 
+  addAppointment(patient:Patient): Observable<Patient>{
+    console.log(patient)
+    return this.httpClient.post<Patient>(patientUrl,patient,this.httpOptions).pipe(
+      retry(1),
+      catchError(this.errorHandler)
+    )
+  }
+
   loginPatient(patientEmail:string,password:string): Observable<Patient>{
     return this.httpClient.get<Patient>(patientUrl+"authenticate"+`${patientEmail}`+`${password}`).pipe(
       retry(1),

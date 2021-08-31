@@ -1,0 +1,17 @@
+.findUs{
+    font-weight: 500;
+    font-size: medium;
+}
+
+footer{
+    background-color:skyblue;
+   text-align:center;
+   color: black;  
+   font-size: 10px;
+}
+
+a{
+    text-decoration: none;
+    color:black;
+    padding-left: 30px;
+}

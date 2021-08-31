@@ -33,8 +33,9 @@ export class PatientRegisterComponent implements OnInit {
 
   addPatient() {
     this.patientService.addPatient(this.patientForm.value).subscribe(() => {
+      this.router.navigate(['loginPage'])
     }, error =>{
-      console.log(this.patientForm.value)
+
       this.errorMessage = error
     } 
     )
