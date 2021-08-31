@@ -1,0 +1,49 @@
+footer{
+    background-color:skyblue;
+   text-align:center;
+   color: black;  
+   font-size: 10px;
+}
+
+
+.findUs{
+    font-weight: 500;
+    font-size: medium;
+}
+
+
+a{
+    text-decoration: none;
+    color:black;
+    padding-left: 30px;
+}
+
+header{
+    font-size: small;
+    padding: 5px;
+    text-align: right;
+    color: black;
+    background-color:skyblue;
+}
+
+.nav{
+    background-color: white;
+}
+.nav a{
+    font-weight: 400;
+    color: black;
+    padding: 20px;
+    text-decoration: none;
+}
+
+.nav a:hover{
+    color:skyblue;
+}
+
+.nav a:active{
+    color: skyblue
+}
+
+h4{
+    text-align: center;
+}

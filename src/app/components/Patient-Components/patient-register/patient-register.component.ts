@@ -30,11 +30,15 @@ export class PatientRegisterComponent implements OnInit {
   }
 
   addPatient() {
-    this.patientService.addPatient(this.patientForm.value).subscribe(() => {
+    this.patientService.addPatient(this.patientForm.value).subscribe((
+     
+    ) => {
       
+   
+
     }, error => this.errorMessage = error
     )
-
+    this.router.navigate(['loginPage'])
   }
 
 }
