@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-appointment-success',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppointmentSuccessComponent implements OnInit {
 
-  constructor() { }
+  constructor(public router:Router) { }
 
   ngOnInit(): void {
   }
+
+  appointmentPage(){
+    this.router.navigate(['appointmentPage'])
+  }
+
+  homepage(){
+    this.router.navigate(['patientDashboard'])
+  }
+
 
 }

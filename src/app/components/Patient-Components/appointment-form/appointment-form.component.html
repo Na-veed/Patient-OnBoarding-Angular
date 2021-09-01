@@ -32,7 +32,7 @@
                             :
                         </th>
                         <th>
-                            <input type="email">
+                            <input type="email" formControlName="patientEmail">
                         </th>
                     </tr>
                     <tr>
@@ -43,7 +43,7 @@
                             :
                         </th>
                         <th>
-                            <select class="select">
+                            <select class="select" formControlName="specialists">
                                 <option value="General">Normal consulting</option>
                                 <option value="Dermatologist">Dermatologist</option>
                                 <option value="Dentist">Dentist</option>
@@ -59,14 +59,31 @@
                             :
                         </th>
                         <th>
-                            <textarea></textarea>
+                            <textarea formControlName="symptoms"></textarea>
+                        </th>
+                    </tr>
+
+                    <tr>
+                        <th>
+                            CONSULTING MODE
+                        </th>
+                        <th>
+                            :
+                        </th>
+                        <th>
+                            <input type="radio" id = "online" name="consultingType" formControlName = "consultingType" value = "online">
+                            <label for="online">ONLINE</label></th>
+                            <th>
+                            <input type="radio" id="offline" name="consultingType" formControlName = "consultingType" value="offline">
+                            <label for="offline">OFFLINE</label><br>
                         </th>
                     </tr>
                 </table>
-            </fieldset>
+          
             <br>
             <button class="buttons" type="submit">BOOK</button>
-            <button class="buttons" type='reset'>CLEAR</button>
+            <button class="buttons" type="reset">CLEAR</button>
+        </fieldset>
             <br>
             <br>
             <br>
@@ -76,7 +93,7 @@
             <br>
             <br>
             <br>
-            
+
         </form>
     </div>
 </body>

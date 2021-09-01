@@ -21,6 +21,10 @@ import { DoctorDashBoardComponent } from './components/Doctor-Components/doctor-
 import { PatientListComponent } from './components/Doctor-Components/patient-list/patient-list.component';
 import { PatientByEmailComponent } from './components/Doctor-Components/patient-by-email/patient-by-email.component';
 import { UpdateAccountComponent } from './components/Patient-Components/update-account/update-account.component';
+import { AdminDeleteDoctorComponent } from './components/Admin-Components/admin-delete-doctor/admin-delete-doctor.component';
+import { AdminDeletePatientComponent } from './components/Admin-Components/admin-delete-patient/admin-delete-patient.component';
+import { PatientBuyMedicinesComponent } from './components/Patient-Components/patient-buy-medicines/patient-buy-medicines.component';
+
 
 
 @NgModule({
@@ -42,7 +46,10 @@ import { UpdateAccountComponent } from './components/Patient-Components/update-a
     DoctorDashBoardComponent,
     PatientListComponent,
     PatientByEmailComponent,
-    UpdateAccountComponent
+    UpdateAccountComponent,
+    AdminDeleteDoctorComponent,
+    AdminDeletePatientComponent,
+    PatientBuyMedicinesComponent
   ],
   imports: [
     BrowserModule,

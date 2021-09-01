@@ -11,6 +11,7 @@ import { ViewAccountComponent } from './components/Patient-Components/view-accou
 import { UpdateAccountComponent } from './components/Patient-Components/update-account/update-account.component';
 import { DoctorDashBoardComponent } from './components/Doctor-Components/doctor-dash-board/doctor-dash-board.component';
 import { DoctorLoginComponent } from './components/Doctor-Components/doctor-login/doctor-login.component';
+import { PatientBuyMedicinesComponent } from './components/Patient-Components/patient-buy-medicines/patient-buy-medicines.component';
 
 const routes: Routes = [
   {path:"registerPage" , component:PatientRegisterComponent},
@@ -23,7 +24,9 @@ const routes: Routes = [
   {path:"viewDetailsPage", component: ViewAccountComponent},
   {path:"updatePatientPage",component: UpdateAccountComponent},
   {path:"doctorDashboard", component: DoctorDashBoardComponent},
-  {path:"doctorLoginPage", component: DoctorLoginComponent}
+  {path:"doctorLoginPage", component: DoctorLoginComponent},
+  {path:"appointmentSuccess", component: AppointmentSuccessComponent},
+  {path:"medicinePage", component: PatientBuyMedicinesComponent}
 ];
 
 @NgModule({
