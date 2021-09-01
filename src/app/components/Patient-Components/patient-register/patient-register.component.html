@@ -14,7 +14,7 @@
             <a routerLink="">HOME</a>
             <a routerLink="contactUsPage">CONTACT US</a>
             <a routerLink="aboutUsPage">ABOUT US</a>
-            <a routerLink="loginPage">LOGIN</a>
+            <a href="loginPage">LOGIN</a>
         </div>
         <br>
         <h4>REGISTRATION SECTION</h4>
@@ -149,14 +149,15 @@
                 <br>
                 <button class="buttons" type="submit" [disabled]='patientForm.invalid' (click)="addPatient()">SUBMIT</button>
                 <button class="buttons" type="reset">CLEAR</button>
+                <span *ngIf="patientForm.invalid==true"><span class="mandatory">please fill details</span></span>
             </fieldset>
         </form>
         <br>
-        Already have an account? <button class="buttons">SIGN IN</button>
+        Already have an account? <a class="buttons" href="loginPage">SIGN IN</a>
     </div>
     <br>
 
-    <footer>
+    <!-- <footer>
         <div align="center">
             <br>
             <h5 class = "findUs">FIND US VIA:</h5><a href="https://twitter.com/?lang=en"><svg
@@ -179,5 +180,5 @@
             <br>
             <br>
         </div>
-    </footer>
+    </footer> -->
 </body>

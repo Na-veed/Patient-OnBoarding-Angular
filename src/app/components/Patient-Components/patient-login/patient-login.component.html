@@ -12,9 +12,9 @@
     <div class="container">
         <div class="nav">
             <a href="">HOME</a>
-            <a href="#">CONTACT US</a>
-            <a href="#">ABOUT US</a>
-            <a href="#">SIGN UP</a>
+            <a routerLink="contactUsPage">CONTACT US</a>
+            <a routerLink="aboutUsPage">ABOUT US</a>
+            <a href="registerPage">SIGN UP</a>
         </div>
         <br>
         <br>
@@ -45,7 +45,10 @@
                    </tr>
                    </table>
                 <br>
-                <button class="buttons" type="submit" (click)= "loginPatient()">LOGIN</button>
+                <button class="buttons" type="submit" [disabled]='patientLoginForm.invalid' (click)= "loginPatient()">LOGIN</button>
+                <span *ngIf="patientLoginForm.invalid==true"><span class="mandatory">please fill details</span></span>
+                <span class="mandatory">{{errorMessage}}</span>
+
                 <br>
                 <br>
                 Dont Have an account? <a class="buttons" href = "registerPage">SIGN UP</a>
@@ -64,7 +67,7 @@
     <br>
     <br>
     <br>
-    <footer>
+    <!-- <footer>
         <div align="center">
             <br>
             <h5 class = "findUs">FIND US VIA:</h5><a href="https://twitter.com/?lang=en"><svg
@@ -87,5 +90,5 @@
             <br>
             <br>
         </div>
-    </footer>
+    </footer> -->
 </body>

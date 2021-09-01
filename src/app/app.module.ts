@@ -48,7 +48,7 @@ import { PatientByEmailComponent } from './components/Doctor-Components/patient-
     HttpClientModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [PatientLoginComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

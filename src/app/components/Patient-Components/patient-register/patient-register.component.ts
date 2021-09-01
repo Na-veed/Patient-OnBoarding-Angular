@@ -20,7 +20,7 @@ export class PatientRegisterComponent implements OnInit {
       lastName: ['', Validators.required],
       patientEmail: ['', Validators.required],
       password: ['', [Validators.required, Validators.minLength(6)]],
-      confirmPassword:[''],
+      confirmPassword:['', Validators.required],
       alternateEmail: [''],
       phoneNumber: ['', Validators.required],
       alternatePhoneNumber: [''],
@@ -33,9 +33,8 @@ export class PatientRegisterComponent implements OnInit {
 
   addPatient() {
     this.patientService.addPatient(this.patientForm.value).subscribe(() => {
-      this.router.navigate(['loginPage'])
     }, error =>{
-
+      this.router.navigate(['loginPage'])
       this.errorMessage = error
     } 
     )

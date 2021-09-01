@@ -25,7 +25,7 @@ export class PatientService {
     console.log(patient)
     return this.httpClient.post<Patient>(`${patientUrl}/${save}`,patient,this.httpOptions).pipe
     (
-      retry(1),
+      retry(0),
       catchError(this.errorHandler)
     )
   }
@@ -33,28 +33,29 @@ export class PatientService {
   addAppointment(patient:Patient): Observable<Patient>{
     console.log(patient)
     return this.httpClient.post<Patient>(patientUrl,patient,this.httpOptions).pipe(
-      retry(1),
+      retry(0),
       catchError(this.errorHandler)
     )
   }
 
   loginPatient(patientEmail:string,password:string): Observable<Patient>{
-    return this.httpClient.get<Patient>(patientUrl+"authenticate"+`${patientEmail}`+`${password}`).pipe(
-      retry(1),
+    return this.httpClient.get<Patient>(patientUrl+"/authenticate/"+`${patientEmail}`+"/"+`${password}`).pipe(
+      retry(0),
       catchError(this.errorHandler)
     )
   }
 
   
   updatePatient(patient:Patient):Observable<Patient>{
-    return this.httpClient.put<Patient>(patientUrl+"update",patient,this.httpOptions).pipe(
-      retry(1),
+    return this.httpClient.put<Patient>(patientUrl+"/update",patient,this.httpOptions).pipe(
+      retry(0),
       catchError(this.errorHandler)
     )
   }
 
   getPatientByEmail(patientEmail:string):Observable<Patient>{
-    return this.httpClient.get<Patient>(patientUrl + "").pipe(
+    console.log("in service now")
+    return this.httpClient.get<Patient>(patientUrl +"/"+`${patientEmail}`).pipe(
       retry(1),
       catchError(this.errorHandler)
     )
@@ -74,11 +75,34 @@ export class PatientService {
       // Get client-side error
       errorMessage = error.error.message;
     } else {
-      // Get server-side error
+      // Get server-side message
       errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
     }
+
+    switch (error.status) {
+      case 200:    console.log("200's");
+
+        break;
+      case 401:
+        break;
+      case 403:
+        break;
+      case 0:
+        case 302:
+      case 400:
+      case 405:
+      case 406:
+      case 409:
+      case 500:
+        case 204:
+        break;
+    }
+
+    console.log(errorMessage);
     return throwError(errorMessage);
   }
+
+
 }
 
 
