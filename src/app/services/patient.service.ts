@@ -88,18 +88,16 @@ export class PatientService {
       case 403:
         break;
       case 0:
-        case 302:
       case 400:
       case 405:
       case 406:
       case 409:
       case 500:
-        case 204:
         break;
     }
 
     console.log(errorMessage);
-    return throwError(errorMessage);
+    return throwError(error.status);
   }
 
 
