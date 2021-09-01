@@ -118,6 +118,20 @@
                     </tr>
 
                     <tr>
+                        <th>CITY</th>
+                        <th>:</th>
+                        <select class = "bloodGroup">
+                            <option value = "null">SELECT YOUR CITY</option>
+                            <option value = "Chennai">Chennai</option>
+                            <option value = "Mumbai">Mumbai</option>
+                            <option value = "......">SELECT YOUR CITY</option>
+                            <option value = "null">SELECT YOUR CITY</option>
+                            <option value = "null">SELECT YOUR CITY</option>
+                            <option value = "null">SELECT YOUR CITY</option>
+                        </select>
+                    </tr>
+
+                    <tr>
                         <th>ALTERNATE PHONE NUMBER</th>
                         <th>:</th>
                         <th><input type="number" formControlName="alternatePhoneNumber"></th>
@@ -130,7 +144,7 @@
                     <tr>
                         <th>BLOOD GROUP</th>
                         <th>:</th>
-                        <th><select calss="bloodGroup" formControlName="bloodGroup">
+                        <th><select class="bloodGroup" formControlName="bloodGroup">
                                 <option value="null">---Select Blood group---</option>
                                 <option value="A+">A+</option>
                                 <option value="O+">O+</option>
@@ -147,7 +161,7 @@
 
                 </table>
                 <br>
-                <button class="buttons" type="submit" [disabled]='patientForm.invalid' (click)="addPatient()">SUBMIT</button>
+                <button class="buttons" type="submit">SUBMIT</button>
                 <button class="buttons" type="reset">CLEAR</button>
                 <span *ngIf="patientForm.invalid==true"><span class="mandatory">please fill details</span></span>
             </fieldset>

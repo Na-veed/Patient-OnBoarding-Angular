@@ -36,9 +36,9 @@ export class PatientRegisterComponent implements OnInit {
     }, error =>{
       this.router.navigate(['loginPage'])
       this.errorMessage = error
-    } 
-    )
-
+      this.router.navigate(['loginPage'])
+    })
+    
   }
 
 }

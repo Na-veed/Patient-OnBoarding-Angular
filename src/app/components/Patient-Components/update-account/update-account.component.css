@@ -26,7 +26,7 @@ header{
 
 
 table{
-    margin-left: 37%;
+    margin-left: 34%;
 }
 
 .table2{
@@ -71,6 +71,10 @@ a{
 }
 
 input[type = "text"]{
+    width: 200px;
+}
+
+input[type = "number"]{
     width: 200px;
 }
 

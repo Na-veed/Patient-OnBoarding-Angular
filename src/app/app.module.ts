@@ -20,6 +20,7 @@ import { AppointmentSuccessComponent } from './components/Patient-Components/app
 import { DoctorDashBoardComponent } from './components/Doctor-Components/doctor-dash-board/doctor-dash-board.component';
 import { PatientListComponent } from './components/Doctor-Components/patient-list/patient-list.component';
 import { PatientByEmailComponent } from './components/Doctor-Components/patient-by-email/patient-by-email.component';
+import { UpdateAccountComponent } from './components/Patient-Components/update-account/update-account.component';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import { PatientByEmailComponent } from './components/Doctor-Components/patient-
     AppointmentSuccessComponent,
     DoctorDashBoardComponent,
     PatientListComponent,
-    PatientByEmailComponent
+    PatientByEmailComponent,
+    UpdateAccountComponent
   ],
   imports: [
     BrowserModule,
