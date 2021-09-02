@@ -12,6 +12,7 @@ import { UpdateAccountComponent } from './components/Patient-Components/update-a
 import { DoctorDashBoardComponent } from './components/Doctor-Components/doctor-dash-board/doctor-dash-board.component';
 import { DoctorLoginComponent } from './components/Doctor-Components/doctor-login/doctor-login.component';
 import { PatientBuyMedicinesComponent } from './components/Patient-Components/patient-buy-medicines/patient-buy-medicines.component';
+import { PatientListComponent } from './components/Doctor-Components/patient-list/patient-list.component';
 
 const routes: Routes = [
   {path:"registerPage" , component:PatientRegisterComponent},
@@ -26,7 +27,8 @@ const routes: Routes = [
   {path:"doctorDashboard", component: DoctorDashBoardComponent},
   {path:"doctorLoginPage", component: DoctorLoginComponent},
   {path:"appointmentSuccess", component: AppointmentSuccessComponent},
-  {path:"medicinePage", component: PatientBuyMedicinesComponent}
+  {path:"medicinePage", component: PatientBuyMedicinesComponent},
+  {path:"patientListPage",component: PatientListComponent}
 ];
 
 @NgModule({

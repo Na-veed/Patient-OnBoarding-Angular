@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { DoctorService } from 'src/app/services/doctor.service';
 
@@ -10,16 +10,26 @@ import { DoctorService } from 'src/app/services/doctor.service';
 })
 export class DoctorLoginComponent implements OnInit {
 
-  constructor(public doctorService:DoctorService,public router: Router) { }
+  constructor(public doctorService:DoctorService,public router: Router,public formBuilder:FormBuilder) { }
 
   doctorLoginForm?:FormGroup;
   errorMessage?: string;
 
   ngOnInit(): void {
-    //form validators and control name should come here
+    // validators and control name should come here
+    this.doctorLoginForm = this.formBuilder.group({
+      doctorId: ['',Validators.required],
+      password:['',Validators.required]
+
+    })
   }
 
   loginDoctor(){
-    this.router.navigate(["doctorDashboard"])
+    this.doctorService.loginDoctor(this.doctorLoginForm.get('doctorId').value,this.doctorLoginForm.get('password').value).subscribe(()=>{
+
+    },error=>{this.errorMessage = error,
+      this.router.navigate(['doctorDashboard'])
+
+    })
   }
 }

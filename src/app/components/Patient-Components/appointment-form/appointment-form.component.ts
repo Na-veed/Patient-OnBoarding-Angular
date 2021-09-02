@@ -28,10 +28,8 @@ export class AppointmentFormComponent implements OnInit {
     this.patientService.addAppointment(this.appointmentForm.value).subscribe(()=>{
       //we have to navigate to success page with router
       this.router.navigate(['appointmentSuccess'])
-    },error => {this.errorMessage ,this.router.navigate(['appointmentSuccess'])
-    
-
-  })
+    },error =>this.errorMessage = error)
+  
 }
 
 

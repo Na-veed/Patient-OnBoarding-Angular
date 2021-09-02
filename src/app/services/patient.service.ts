@@ -2,9 +2,11 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
+import { Appointment } from '../model/appointment';
 import { Patient } from '../model/patient.ts';
 
 const patientUrl:string =  "http://localhost:9090/patients";
+const appointmentUrl:string = "http://localhost:9090/appointments";
 const save='save'
 @Injectable
 ({
@@ -30,9 +32,9 @@ export class PatientService {
     )
   }
 
-  addAppointment(patient:Patient): Observable<Patient>{
-    console.log(patient)
-    return this.httpClient.post<Patient>(patientUrl,patient,this.httpOptions).pipe(
+  addAppointment(appointment:Appointment): Observable<Appointment>{
+    console.log(appointment)
+    return this.httpClient.post<Appointment>(`${appointmentUrl}/${save}`,appointment,this.httpOptions).pipe(
       retry(0),
       catchError(this.errorHandler)
     )

@@ -12,4 +12,12 @@ export class PatientListComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  deletePatient(){
+
+  }
+
+  getPatientByEmail(){
+    
+  }
+
 }
