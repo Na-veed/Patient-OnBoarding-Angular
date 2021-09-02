@@ -20,85 +20,20 @@
         <br>
         <h4>ACCOUNT DETAILS</h4>
         <br>
-        <table>
-            <tr>
-                <th>
-                    FIRST NAME
-                </th>
-                <th>
-                    :
-                </th>
-                <td>
-                    {{firstName}}
-                </td>
-            </tr>
-            <tr>
-                <th>
-                    LAST NAME
-                </th>
-                <th>
-                    :
-                </th>
-                <td>
-                    {{lastName}}
-                </td>
-            </tr>
-            <tr>
-                <th>
-                    EMAIL
-                </th>
-                <th>
-                    :
-                </th>
-                <td>
-                    {{patientEmail}}
-                </td>
-            </tr>
-            <tr>
-                <th>
-                    D.O.B
-                </th>
-                <th>
-                    :
-                </th>
-                <td>
-                    {{dateOfBirth}}
-                </td>
-            </tr>
-            <tr>
-                <th>
-                    CITY
-                </th>
-                <th>
-                    :
-                </th>
-                <td>
-                    {{city}}
-                </td>
-            </tr>
-            <tr>
-                <th>
-                    PHONE NUMBER
-                </th>
-                <th>
-                    :
-                </th>
-                <td>
-                    {{phoneNumber}}
-                </td>
-            </tr>
-            <tr>
-                <th>
-                    ALTERNATE MOBILE NUMBER
-                </th>
-                <th>
-                    :
-                </th>
-                <td>
-                    {{alternatePhoneNumber}}
-                </td>
-            </tr>
-        </table>
+        <table align="center" cellspacing="10" cellpadding="10">
+            <tr><td>First Name</td>              :<td>{{patient.firstName}}  </td></tr>
+            <tr><td>Last Name</td>               : <td> {{patient.lastName}} </td></tr>
+            <tr><td>Email</td>                   : <td> {{patient.patientEmail}} </td></tr>
+            <tr><td>Alternate Email</td>         : <td> {{patient.alternateEmail}} </td></tr>
+            <tr><td>Password</td>                : <td> {{patient.password}} </td></tr>
+            <tr><td>Date of Birth</td>           : <td>{{patient.dateOfBirth}}  </td></tr>
+            <tr><td>Blood Group</td>             : <td> {{patient.bloodGroup}} </td></tr>
+            <tr><td>City</td>                    : <td>{{patient.city}}  </td></tr>
+            <tr><td>Phone Number</td>            : <td> {{patient.phoneNumber}} </td></tr>
+            <tr><td>Alternate Phone Number</td>  : <td>{{patient.alternatePhoneNumber}}  </td></tr>
+            <tr><td>Height</td>                  : <td> {{patient.patientHeight}} </td></tr>
+            <tr><td>Weight</td>                  : <td>{{patient.patientWeight}}  </td></tr>
+           </table>
         <br>
  
         <button class = "buttons" (click) = "updatePatient()">UPDATE</button>

@@ -20,10 +20,11 @@ export class PatientRegisterComponent implements OnInit {
       lastName: ['', Validators.required],
       patientEmail: ['', Validators.required],
       password: ['', [Validators.required, Validators.minLength(6)]],
-      confirmPassword:[''],
+      confirmPassword:['', Validators.required],
       alternateEmail: [''],
       phoneNumber: ['', Validators.required],
       alternatePhoneNumber: [''],
+      city:[''],
       dateOfBirth: [''],
       bloodGroup: ['']
       
@@ -32,12 +33,17 @@ export class PatientRegisterComponent implements OnInit {
   }
 
   addPatient() {
-    this.patientService.addPatient(this.patientForm.value).subscribe(() => {
-      
+    this.patientService.addPatient(this.patientForm.value).subscribe(()=> {
     }, error =>{
-
       this.errorMessage = error
-      this.router.navigate(['loginPage'])
+      if(this.errorMessage=="200"){
+        console.log("success")
+        this.router.navigate(['loginPage'])
+      }
+      else{
+        this.errorMessage="Email Already Exist"
+        console.log(this.errorMessage)
+      }
     })
     
   }

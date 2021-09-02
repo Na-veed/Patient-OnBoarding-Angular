@@ -14,7 +14,7 @@
             <a routerLink="">HOME</a>
             <a routerLink="contactUsPage">CONTACT US</a>
             <a routerLink="aboutUsPage">ABOUT US</a>
-            <a routerLink="loginPage">LOGIN</a>
+            <a href="loginPage">LOGIN</a>
         </div>
         <br>
         <h4>REGISTRATION SECTION</h4>
@@ -120,14 +120,14 @@
                     <tr>
                         <th>CITY</th>
                         <th>:</th>
-                        <select class = "bloodGroup">
-                            <option value = "null">SELECT YOUR CITY</option>
+                        <select class = "bloodGroup" formControlName="city">
+                            <option value = "" selected>---Select Your City---</option>
                             <option value = "Chennai">Chennai</option>
                             <option value = "Mumbai">Mumbai</option>
-                            <option value = "......">SELECT YOUR CITY</option>
-                            <option value = "null">SELECT YOUR CITY</option>
-                            <option value = "null">SELECT YOUR CITY</option>
-                            <option value = "null">SELECT YOUR CITY</option>
+                            <option value = "Bangalore">Bangalore</option>
+                            <option value = "Goa">Goa</option>
+                            <option value = "UP">UP</option>
+                            <option value = "Telangana">Telangana</option>
                         </select>
                     </tr>
 
@@ -145,7 +145,7 @@
                         <th>BLOOD GROUP</th>
                         <th>:</th>
                         <th><select class="bloodGroup" formControlName="bloodGroup">
-                                <option value="null">---Select Blood group---</option>
+                                <option value="">---Select Blood group---</option>
                                 <option value="A+">A+</option>
                                 <option value="O+">O+</option>
                                 <option value="B+">B+</option>
@@ -163,14 +163,16 @@
                 <br>
                 <button class="buttons" type="submit">SUBMIT</button>
                 <button class="buttons" type="reset">CLEAR</button>
+                <span *ngIf="patientForm.invalid==true"><span class="mandatory">please fill details</span></span>
+                <span class="mandatory">{{errorMessage}}</span>
             </fieldset>
         </form>
         <br>
-        Already have an account? <button class="buttons">SIGN IN</button>
+        Already have an account? <a class="buttons" href="loginPage">SIGN IN</a>
     </div>
     <br>
 
-    <footer>
+    <!-- <footer>
         <div align="center">
             <br>
             <h5 class = "findUs">FIND US VIA:</h5><a href="https://twitter.com/?lang=en"><svg
@@ -193,5 +195,5 @@
             <br>
             <br>
         </div>
-    </footer>
+    </footer> -->
 </body>

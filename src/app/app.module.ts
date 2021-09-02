@@ -57,7 +57,7 @@ import { PatientBuyMedicinesComponent } from './components/Patient-Components/pa
     HttpClientModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [PatientLoginComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
