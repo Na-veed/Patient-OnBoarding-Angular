@@ -47,7 +47,7 @@
                     <tr>
                         <th>EMAIL ID</th>
                         <th>:</th>
-                        <th><input type="email" formControlName="patientEmail"><span
+                        <th><input type="email" formControlName="patientEmail" [readonly]="true"><span
                                 class="mandatory"> </span></th>
                         <th
                             *ngIf="updateForm.get('patientEmail').hasError('required') && updateForm.get('patientEmail').touched">
@@ -56,9 +56,9 @@
 
                     </tr>
                     <tr>
-                        <th>SECONDARY MAIL ID</th>
+                        <th>ALTERNATE MAIL ID</th>
                         <th>:</th>
-                        <th><input type="email" formControlName="patientEmail"><span
+                        <th><input type="email" formControlName="alternateEmail"><span
                                 class="mandatory"> </span></th>
                         <th
                             *ngIf="updateForm.get('patientEmail').hasError('required') && updateForm.get('patientEmail').touched">
@@ -84,6 +84,12 @@
                         <th>:</th>
                         <th><input type="date" placeholder="mm/dd/yyyy" formControlName="dateOfBirth"></th>
                     </tr>
+                    <tr style="display:none">
+                        <th>PASSWORD</th>
+                        <th>:</th>
+                        <th><input type="password" placeholder="Enter your password" formControlName = "password"><span class="mandatory" >
+                                *</span></th>
+                    </tr>
 
                     <tr>
                         <th>ALTERNATE PHONE NUMBER</th>
@@ -91,9 +97,27 @@
                         <th><input type="number" formControlName="alternatePhoneNumber"></th>
                     </tr>
                     <tr>
-                        <th>ALTERNATE MAIL ID</th>
+                        <th>CITY</th>
                         <th>:</th>
-                        <th><input type="text" formControlName="alternateEmail"></th>
+                        <select class = "bloodGroup" formControlName="city">
+                            <option value = "" selected>---Select Your City---</option>
+                            <option value = "Chennai">Chennai</option>
+                            <option value = "Mumbai">Mumbai</option>
+                            <option value = "Bangalore">Bangalore</option>
+                            <option value = "Goa">Goa</option>
+                            <option value = "UP">UP</option>
+                            <option value = "Telangana">Telangana</option>
+                        </select>
+                    </tr>
+                    <tr>
+                        <th>HEIGHT (in feet)</th>
+                        <th>:</th>
+                        <th><input type="number" formControlName="patientHeight"></th>
+                    </tr>
+                    <tr>
+                        <th>WEIGHT (in kg)</th>
+                        <th>:</th>
+                        <th><input type="number" formControlName="patientWeight"></th>
                     </tr>
                     <tr>
                         <th>BLOOD GROUP</th>

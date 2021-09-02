@@ -14,20 +14,11 @@ export class ViewAccountComponent implements OnInit {
   email?:string
   patient:Patient
 
-  firstName?:string;
-  lastName?:string;
-  patientEmail?:string;
-  dateOfBirth?:Date;
-  city?:string;
-  phoneNumber?:number;
-  alternatePhoneNumber?:number;
 
   constructor(public patientService:PatientService,public router:Router) { }
 
   ngOnInit(): void {
-    this.firstName = "Naveed"
-    console.log("entered"+PatientLoginComponent.userEmail)
-      this.patientService.getPatientByEmail("sheshettipavansai969@gmail.com").subscribe((data:Patient) => {
+      this.patientService.getPatientByEmail(localStorage.getItem('userEmail')).subscribe((data:Patient) => {
         console.log(data)
         // console.log(this.patientLoginComponent.userEmail)
         this.patient=data

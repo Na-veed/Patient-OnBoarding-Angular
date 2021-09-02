@@ -47,6 +47,8 @@ export class PatientService {
 
   
   updatePatient(patient:Patient):Observable<Patient>{
+    console.log("update service called")
+    console.log(patient)
     return this.httpClient.put<Patient>(patientUrl+"/update",patient,this.httpOptions).pipe(
       retry(0),
       catchError(this.errorHandler)
@@ -54,7 +56,6 @@ export class PatientService {
   }
 
   getPatientByEmail(patientEmail:string):Observable<Patient>{
-    console.log("in service now")
     return this.httpClient.get<Patient>(patientUrl +"/"+`${patientEmail}`).pipe(
       retry(1),
       catchError(this.errorHandler)

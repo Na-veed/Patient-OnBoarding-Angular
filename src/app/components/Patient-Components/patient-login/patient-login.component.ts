@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { Router } from '@angular/router';
-import { Patient } from 'src/app/model/patient.ts';
 import { PatientService } from 'src/app/services/patient.service';
 
 @Component({
@@ -15,7 +14,7 @@ export class PatientLoginComponent implements OnInit {
   patientLoginForm?: FormGroup;
   errorMessage?: string;
   result?:boolean;
-  static userEmail?:string
+  userEmail?:string
 
   ngOnInit(): void {
     this.patientLoginForm = this.formBuilder.group({
@@ -26,8 +25,9 @@ export class PatientLoginComponent implements OnInit {
 
   loginPatient(){
     this.patientService.loginPatient(this.patientLoginForm.get('patientEmail').value,this.patientLoginForm.get('password').value).subscribe(() => {
-      PatientLoginComponent.userEmail =this.patientLoginForm.get('patientEmail').value
-      console.log("see here\n"+PatientLoginComponent.userEmail)
+      localStorage.setItem('userEmail', this.patientLoginForm.get('patientEmail').value); // setting
+      console.log(localStorage.getItem('userEmail')); 
+      this.saveEmail();
       this.navigate();
     },error=>{
       this.errorMessage = "You Entered Incorrect Credentials"
@@ -38,6 +38,9 @@ export class PatientLoginComponent implements OnInit {
 
   navigate(){
     this.router.navigate(['patientDashboard'])
+  }
+  saveEmail(){
+     this.userEmail=this.patientLoginForm.get('patientEmail').value
   }
 
 }
