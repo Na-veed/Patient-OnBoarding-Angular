@@ -5,7 +5,7 @@ import { retry, catchError } from 'rxjs/operators';
 import { Doctor } from '../model/doctor';
 import { Patient } from '../model/patient.ts';
 
-const doctorUrl:string =  "";
+const doctorUrl:string =  "http://localhost:9090/doctors";
 const patientUrl:string =  "http://localhost:9090/patients";
 
 
@@ -14,13 +14,13 @@ const patientUrl:string =  "http://localhost:9090/patients";
 })
 export class DoctorService {
 
-  doctorEmail?:string
+  doctorId?:number
   password?:string
   doctor?:Doctor;
   constructor(public httpClient:HttpClient) { }
 
-  loginDoctor( doctorEmail?:string,password?:string): Observable<Doctor>{
-    return this.httpClient.get<Doctor>(doctorUrl).pipe(
+  loginDoctor( doctorId?:number,password?:string): Observable<Doctor>{
+    return this.httpClient.get<Doctor>(doctorUrl+"/authenticate/"+`${doctorId}`+"/"+`${password}`).pipe(
       retry(1),
       catchError(this.errorHandler)
     )
