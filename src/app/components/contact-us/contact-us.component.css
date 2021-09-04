@@ -1,0 +1,82 @@
+header{
+    font-size: small;
+    padding: 5px;
+    text-align: right;
+    color: black;
+    background-color:skyblue;
+}
+
+.nav{
+    background-color: white;
+}
+.nav a{
+    font-weight: 400;
+    color: black;
+    padding: 20px;
+    text-decoration: none;
+}
+
+.nav a:hover{
+    color:skyblue;
+}
+
+.nav a:active{
+    color: skyblue
+}
+
+.headerRight{
+    font-weight: 400;
+    color: black;
+    padding: 20px;
+    text-decoration: none;
+    
+}
+
+footer{
+    background-color:skyblue;
+   text-align:center;
+   color: black;  
+   font-size: 10px;
+}
+
+.findUs{
+    font-weight: 500;
+    font-size: medium;
+}
+
+
+a{
+    text-decoration: none;
+    color:black;
+    padding-left: 30px;
+}
+
+.skyblue{
+    background-color: skyblue;
+}
+
+.black{
+    background-color: black;
+    color: white;
+}
+
+.buttons {
+    align-content: center;
+	color:black;
+    background-color:skyblue;
+    text-decoration:none;;
+    border:none;
+    padding:8px 14px;
+    font-size:15px;
+    margin-right: 10px;
+}
+.buttons:hover{
+
+	color:black;
+    background-color:whitesmoke;
+    border: 2px solid black;
+}
+
+.imageText{
+    color:black;
+}
