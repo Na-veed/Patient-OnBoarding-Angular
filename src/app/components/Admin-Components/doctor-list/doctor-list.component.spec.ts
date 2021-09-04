@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AdminDeleteDoctorComponent } from './admin-delete-doctor.component';
+import { DoctorListComponent } from './doctor-list.component';
 
-describe('AdminDeleteDoctorComponent', () => {
-  let component: AdminDeleteDoctorComponent;
-  let fixture: ComponentFixture<AdminDeleteDoctorComponent>;
+describe('DoctorListComponent', () => {
+  let component: DoctorListComponent;
+  let fixture: ComponentFixture<DoctorListComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AdminDeleteDoctorComponent ]
+      declarations: [ DoctorListComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AdminDeleteDoctorComponent);
+    fixture = TestBed.createComponent(DoctorListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

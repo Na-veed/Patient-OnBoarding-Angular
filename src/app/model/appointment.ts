@@ -1,7 +1,11 @@
+import { LocationChangeEvent } from "@angular/common";
+
 export class Appointment {
 
     patientEmail?:string;
-    specialist?:string;
+    specializationId?:string;
     symptoms?:string;
     consultingType?:string;
+    doctorId?:number;
+    appointmentStatus?:string;
 }

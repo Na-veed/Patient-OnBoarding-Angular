@@ -6,7 +6,6 @@ import { Appointment } from '../model/appointment';
 import { Patient } from '../model/patient.ts';
 
 const patientUrl:string =  "http://localhost:9090/patients";
-const appointmentUrl:string = "http://localhost:9090/appointments";
 const save='save'
 @Injectable
 ({
@@ -32,16 +31,15 @@ export class PatientService {
     )
   }
 
-  addAppointment(appointment:Appointment): Observable<Appointment>{
-    console.log(appointment)
-    return this.httpClient.post<Appointment>(`${appointmentUrl}/${save}`,appointment,this.httpOptions).pipe(
+  loginPatient(patientEmail:string,password:string): Observable<Patient>{
+    return this.httpClient.get<Patient>(patientUrl+"/authenticate/"+`${patientEmail}`+"/"+`${password}`).pipe(
       retry(0),
       catchError(this.errorHandler)
     )
   }
 
-  loginPatient(patientEmail:string,password:string): Observable<Patient>{
-    return this.httpClient.get<Patient>(patientUrl+"/authenticate/"+`${patientEmail}`+"/"+`${password}`).pipe(
+  deletePatient(patientEmail:string): Observable<Patient>{
+    return this.httpClient.delete(patientUrl+"/delete/"+`${patientEmail}`).pipe(
       retry(0),
       catchError(this.errorHandler)
     )

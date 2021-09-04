@@ -32,7 +32,7 @@
                             :
                         </th>
                         <th>
-                            <input type="email" formControlName="patientEmail">
+                            <input type="email" formControlName="patientEmail" [readonly] = "true">
                         </th>
                     </tr>
                     <tr>
@@ -43,11 +43,11 @@
                             :
                         </th>
                         <th>
-                            <select class="select" formControlName="specialists">
+                            <select class="select" formControlName="specializationId">
                                 <option value="General">Normal consulting</option>
-                                <option value="Dermatologist">Dermatologist</option>
-                                <option value="Dentist">Dentist</option>
-                                <option value="Cardiologist">Cardiologist</option>
+                                <option value="1111">Dermatologist</option>
+                                <option value="2222">Dentist</option>
+                                <option value="3333">Cardiologist</option>
                             </select>
                         </th>
                     </tr>
@@ -62,22 +62,34 @@
                             <textarea formControlName="symptoms"></textarea>
                         </th>
                     </tr>
-
                     <tr>
-                        <th>
-                            CONSULTING MODE
-                        </th>
-                        <th>
-                            :
-                        </th>
-                        <th>
-                            <input type="radio" id = "online" name="consultingType" formControlName = "consultingType" value = "online">
-                            <label for="online">ONLINE</label></th>
+                        <th>PREFERRED DOCTOR</th>
+                        <th>:</th>
+                        <th> <select class="select" formControlName="doctorId">
+                            <option value="1234">Dr.Dinesh Kumar</option>
+                            <option value="1235">Dr.Manish Patel</option>
+                            <option value="1236">Dr.Divya</option>
+                            <option value="">Others</option>
+                        </select></th>
+                        </tr>
+                        <tr>
                             <th>
-                            <input type="radio" id="offline" name="consultingType" formControlName = "consultingType" value="offline">
-                            <label for="offline">OFFLINE</label><br>
-                        </th>
-                    </tr>
+                                CONSULTING MODE
+                            </th>
+                            <th>
+                                :
+                            </th>
+                            <th>
+                                <input type="radio" id = "online" name="consultingType" formControlName = "consultingType" value = "online">
+                                <label for="online">ONLINE</label></th>
+                                <th>
+                                <input type="radio" id="offline" name="consultingType" formControlName = "consultingType" value="offline">
+                                <label for="offline">OFFLINE</label><br>
+                            </th>
+                        </tr>
+                        <tr>
+                            <input type = "hidden" value = "pending" formControlName = "appointmentStatus">                      
+                        </tr>
                 </table>
           
             <br>
