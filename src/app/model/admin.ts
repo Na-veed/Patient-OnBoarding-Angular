@@ -1,7 +1,7 @@
 import { Time } from "@angular/common";
 
 export class Admin {
-    adminId?:number;
+    adminId?:string;
     password?:string;
     lastLoggedInTime?:Time;
 }

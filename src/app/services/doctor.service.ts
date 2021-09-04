@@ -25,9 +25,21 @@ export class DoctorService {
       catchError(this.errorHandler)
     )
   }
+  getDoctorDetails( doctorId?:number): Observable<Doctor>{
+    return this.httpClient.get<Doctor>(doctorUrl+'/'+`${doctorId}`).pipe(
+      retry(1),
+      catchError(this.errorHandler)
+    )
+  }
+  getAllDoctors(): Observable<Doctor[]>{
+    return this.httpClient.get<Doctor[]>(doctorUrl).pipe(
+      retry(1),
+      catchError(this.errorHandler)
+    )
+  }
 
   getAllPatient(patient:Patient):Observable<Patient[]>{
-    return this.httpClient.get<Patient[]>(patientUrl + "").pipe(
+    return this.httpClient.get<Patient[]>(patientUrl).pipe(
       retry(1),
       catchError(this.errorHandler)
     )

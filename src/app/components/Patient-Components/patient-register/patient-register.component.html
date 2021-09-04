@@ -128,6 +128,7 @@
                             <option value = "Goa">Goa</option>
                             <option value = "UP">UP</option>
                             <option value = "Telangana">Telangana</option>
+                            <option value="others">Others</option>
                         </select>
                     </tr>
 
@@ -145,7 +146,7 @@
                         <th>BLOOD GROUP</th>
                         <th>:</th>
                         <th><select class="bloodGroup" formControlName="bloodGroup">
-                                <option value="">---Select Blood group---</option>
+                                <option value="" selected>---Select Blood group---</option>
                                 <option value="A+">A+</option>
                                 <option value="O+">O+</option>
                                 <option value="B+">B+</option>
@@ -161,7 +162,7 @@
 
                 </table>
                 <br>
-                <button class="buttons" type="submit">SUBMIT</button>
+                <button class="buttons" type="submit"[disabled]="patientForm.invalid">SUBMIT</button>
                 <button class="buttons" type="reset">CLEAR</button>
                 <span *ngIf="patientForm.invalid==true"><span class="mandatory">please fill details</span></span>
                 <span class="mandatory">{{errorMessage}}</span>

@@ -26,6 +26,7 @@ export class DoctorLoginComponent implements OnInit {
 
   loginDoctor(){
     this.doctorService.loginDoctor(this.doctorLoginForm.get('doctorId').value,this.doctorLoginForm.get('password').value).subscribe(()=>{
+        localStorage.setItem('doctorLoginId', this.doctorLoginForm.get('doctorId').value)
       this.router.navigate(['doctorDashboard'])
     },error=>{this.errorMessage = error
       this.errorMessage = "You Entered Incorrect Credentials"

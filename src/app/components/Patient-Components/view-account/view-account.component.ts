@@ -33,7 +33,7 @@ updatePatient(){
   this.router.navigate(['updatePatientPage'])
 }
 
-deletePatient(){
-  this.router.navigate(['deletePatientPage'])
+goBack(){
+  this.router.navigate(['patientDashboard'])
 }
 }

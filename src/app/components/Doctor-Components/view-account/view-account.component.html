@@ -12,7 +12,7 @@
     <div class="container">
         <div class="nav">
             <a routerLink="">HOME</a>
-            <a href="patientDashboard">DASHBOARD</a>
+            <a href="doctorDashboard">DASHBOARD</a>
             <a routerLink="aboutUsPage">ABOUT US</a>
             <a routerLink="contactUsPage">CONTACT US</a>
         </div>
@@ -21,21 +21,18 @@
         <h4>ACCOUNT DETAILS</h4>
         <br>
         <table align="center" cellspacing="10" cellpadding="10">
-            <tr><td>First Name</td>              :<td>{{patient.firstName}}  </td></tr>
-            <tr><td>Last Name</td>               : <td> {{patient.lastName}} </td></tr>
-            <tr><td>Email</td>                   : <td> {{patient.patientEmail}} </td></tr>
-            <tr><td>Alternate Email</td>         : <td> {{patient.alternateEmail}} </td></tr>
-            <tr><td>Date of Birth</td>           : <td>{{patient.dateOfBirth}}  </td></tr>
-            <tr><td>Blood Group</td>             : <td> {{patient.bloodGroup}} </td></tr>
-            <tr><td>City</td>                    : <td>{{patient.city}}  </td></tr>
-            <tr><td>Phone Number</td>            : <td> {{patient.phoneNumber}} </td></tr>
-            <tr><td>Alternate Phone Number</td>  : <td>{{patient.alternatePhoneNumber}}  </td></tr>
-            <tr><td>Height</td>                  : <td> {{patient.patientHeight}} </td></tr>
-            <tr><td>Weight</td>                  : <td>{{patient.patientWeight}}  </td></tr>
+            
+            <tr><td> Id</td>                   : <td> {{doctor.doctorId}} </td></tr>
+            <tr><td>Name</td>                  : <td>{{doctor.doctorName}}  </td></tr>
+            <tr><td>Specialization</td>        : <td> {{doctor.specialization}} </td></tr>
+            <tr><td>Qualification</td>         : <td>{{doctor.qualification}}  </td></tr>
+            <tr><td>Experience</td>         : <td>{{doctor.experience}}  </td></tr>
+            <tr><td>Phone Number</td>         : <td>{{doctor.phoneNumber}}  </td></tr>
+            <tr><td>Email</td>         : <td>{{doctor.email}}  </td></tr>
            </table>
         <br>
  
-        <button class = "buttons" (click) = "updatePatient()">UPDATE</button>
+        <button class = "buttons" (click) = "updateDoctor()">UPDATE</button>
         <button class = "buttons" (click) = "goBack()">Go Back</button>
         <br>
         <br>

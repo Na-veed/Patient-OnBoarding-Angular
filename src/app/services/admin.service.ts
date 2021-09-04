@@ -20,7 +20,7 @@ export class AdminService {
   }
   constructor(public httpClient:HttpClient) { }
 
-  loginAdmin(adminId:number,password:string): Observable<Admin>{
+  loginAdmin(adminId:string,password:string): Observable<Admin>{
     return this.httpClient.get<Admin>(adminUrl+"/authenticate/"+`${adminId}`+"/"+`${password}`).pipe(
       retry(0),
       catchError(this.errorHandler)
