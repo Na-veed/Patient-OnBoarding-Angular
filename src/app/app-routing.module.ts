@@ -13,6 +13,11 @@ import { DoctorDashBoardComponent } from './components/Doctor-Components/doctor-
 import { DoctorLoginComponent } from './components/Doctor-Components/doctor-login/doctor-login.component';
 import { PatientBuyMedicinesComponent } from './components/Patient-Components/patient-buy-medicines/patient-buy-medicines.component';
 import { PatientListComponent } from './components/Doctor-Components/patient-list/patient-list.component';
+import { AdminPatientListComponent } from './components/Admin-Components/admin-patient-list/admin-patient-list.component';
+import { AppointmentListComponent } from './components/Admin-Components/appointment-list/appointment-list.component';
+import { DoctorListComponent } from './components/Admin-Components/doctor-list/doctor-list.component';
+import { AdminDashboardComponent } from './components/Admin-Components/admin-dashboard/admin-dashboard.component';
+import { AdminLoginComponent } from './components/Admin-Components/admin-login/admin-login.component';
 
 const routes: Routes = [
   {path:"registerPage" , component:PatientRegisterComponent},
@@ -28,7 +33,12 @@ const routes: Routes = [
   {path:"doctorLoginPage", component: DoctorLoginComponent},
   {path:"appointmentSuccess", component: AppointmentSuccessComponent},
   {path:"medicinePage", component: PatientBuyMedicinesComponent},
-  {path:"patientListPage",component: PatientListComponent}
+  {path:"patientListPage",component: PatientListComponent},
+  {path:"AdminPatientListPage", component: AdminPatientListComponent},
+  {path: "appointmentListPage", component:AppointmentListComponent},
+  {path: "DoctorListPage", component:DoctorListComponent},
+  {path: "adminDashboard", component:AdminDashboardComponent},
+  {path: "adminLoginPage", component:AdminLoginComponent}
 ];
 
 @NgModule({

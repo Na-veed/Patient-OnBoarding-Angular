@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators,  } from '@angular/forms';
 import { PatientService } from 'src/app/services/patient.service';
 import { Router } from '@angular/router';
 import { Patient } from 'src/app/model/patient.ts';
+import { AppointmentService } from 'src/app/services/appointment.service';
 
 @Component({
   selector: 'app-appointment-form',
@@ -13,24 +14,43 @@ export class AppointmentFormComponent implements OnInit {
 
   appointmentForm?:FormGroup;
   errorMessage?: string;
-  constructor(public patientService:PatientService, public formBuilder:FormBuilder, public router: Router) { }
+  patient?:Patient
+  
+  constructor(public appointmentService:AppointmentService, public formBuilder:FormBuilder, public router: Router, public patientService:PatientService) { }
 
   ngOnInit(): void {
+    this.patientService.getPatientByEmail(localStorage.getItem('userEmail')).subscribe((data:Patient) => {
+    this.patient = data
     this.appointmentForm = this.formBuilder.group({
-      patientEmail: ['',Validators.required],
-      specialists: [''],
+      patientEmail: [this.patient.patientEmail,Validators.required],
+      specializationId: [''],
       symptoms: [''],
+      doctorId: [''],
       consultingType: ['',Validators.required],
+      appointmentStatus: ["pending"]
     })
+  },error =>{
+    console.log("error occured")
+    this.errorMessage = error ;
+    
+  })
+  
   }
 
   addAppointment(){
-    this.patientService.addAppointment(this.appointmentForm.value).subscribe(()=>{
-      //we have to navigate to success page with router
-      this.router.navigate(['appointmentSuccess'])
-    },error =>this.errorMessage = error)
+    this.appointmentService.addAppointment(this.appointmentForm.value).subscribe(()=>{
+    },error => this.errorMessage = error)
+      this.patientService.getPatientByEmail(localStorage.getItem('userEmail')).subscribe((data:Patient)=>{
+
+      },error =>{
+        console.log("error occured")
+        this.errorMessage = error
+      })
+    this.router.navigate(['appointmentSuccess'])
   
 }
+
+
 
 
   
