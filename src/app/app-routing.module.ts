@@ -18,11 +18,13 @@ import { AppointmentListComponent } from './components/Admin-Components/appointm
 import { DoctorListComponent } from './components/Admin-Components/doctor-list/doctor-list.component';
 import { AdminDashboardComponent } from './components/Admin-Components/admin-dashboard/admin-dashboard.component';
 import { AdminLoginComponent } from './components/Admin-Components/admin-login/admin-login.component';
+import { AboutUsComponent } from './components/about-us/about-us.component';
 
 const routes: Routes = [
   {path:"registerPage" , component:PatientRegisterComponent},
   {path:"loginPage", component:PatientLoginComponent},
   {path:"" , component:HomeComponent},
+  {path:"aboutUsPage", component:AboutUsComponent},
   {path:"patientDashboard", component:PatientDashboardComponent},
   {path:"contactUsPage", component:ContactUsComponent},
   {path:"appointmentPage", component: AppointmentFormComponent},
