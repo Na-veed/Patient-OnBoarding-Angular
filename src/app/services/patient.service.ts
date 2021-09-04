@@ -64,8 +64,8 @@ export class PatientService {
     )
   }
 
-  getAllPatient(patient:Patient):Observable<Patient[]>{
-    return this.httpClient.get<Patient[]>(patientUrl + "").pipe(
+  getAllPatient():Observable<Patient[]>{
+    return this.httpClient.get<Patient[]>(patientUrl).pipe(
       retry(1),
       catchError(this.errorHandler)
     )

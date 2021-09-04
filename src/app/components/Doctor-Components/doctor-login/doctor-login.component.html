@@ -26,7 +26,7 @@
                     <tr>
                         <th>USER ID</th>
                         <th>:</th>
-                        <th><input type="text" placeholder="Enter your user Id" formControlName="doctorId">
+                        <th><input type="number" placeholder="Enter your user Id" formControlName="doctorId">
                         <th
                             *ngIf="doctorLoginForm.get('doctorId').hasError('required') && doctorLoginForm.get('doctorId').touched">
                             <span class="mandatory">*Email is required for login</span>
@@ -46,6 +46,7 @@
                    </table>
                 <br>
                 <button class="buttons" type="submit">LOGIN</button>
+                <span class="mandatory">{{errorMessage}}</span>
                 <br>
                 <br>
                 forgot password?<a href = "" class = "buttons">CLICK HERE</a>
