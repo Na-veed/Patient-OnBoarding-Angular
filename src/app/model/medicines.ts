@@ -1,7 +1,8 @@
 export class Medicines {
+    medicineNumber?:number;
     patientEmail?:string
-    serialNumber?:number;
-    medicines?:string;
+    medicineName?:string;
     quantity?:number;
     price?:number;
+    status?:string;
 }

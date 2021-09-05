@@ -4,11 +4,14 @@ import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
 import { Admin } from '../model/admin';
 import { Appointment } from '../model/appointment';
+import { Medicines } from '../model/medicines';
 import { Patient } from '../model/patient.ts';
 
 const adminUrl:string = "http://localhost:9090/admin";
 const patientUrl:string =  "http://localhost:9090/patients";
 const appointmentUrl:string="http://localhost:9090/appointments";
+const medicinesUrl:string = "http://localhost:9090/medicines"
+
 
 @Injectable({
   providedIn: 'root'
@@ -40,6 +43,20 @@ export class AdminService {
       retry(1),
       catchError(this.errorHandler)
       )
+  }
+
+  getAllMedicines():Observable<Medicines[]>{
+    return this.httpClient.get<Medicines[]>(medicinesUrl).pipe(
+      retry(1),
+      catchError(this.errorHandler)
+    )
+  }
+
+  getMedicineByStatus(status:string):Observable<Medicines[]>{
+    return this.httpClient.get<Medicines[]>(medicinesUrl + "/status/" + `${status}`).pipe(
+      retry(1),
+      catchError(this.errorHandler)
+    )
   }
 
   

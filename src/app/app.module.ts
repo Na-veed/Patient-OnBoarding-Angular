@@ -28,6 +28,9 @@ import { AdminPatientListComponent } from './components/Admin-Components/admin-p
 import { DoctorService } from './services/doctor.service';
 import { AdminDoctorListComponent } from './components/Admin-Components/admin-doctor-list/admin-doctor-list.component';
 import { DoctorRegisterComponent } from './components/Doctor-Components/register-doctor/register-doctor.component';
+import { AddMedicineComponent } from './components/Doctor-Components/add-medicine/add-medicine.component';
+import { MedicineSuccessComponent } from './components/Patient-Components/medicine-success/medicine-success.component';
+import { AdminMedicineListComponent } from './components/Admin-Components/admin-medicine-list/admin-medicine-list.component';
 
 
 
@@ -56,7 +59,10 @@ import { DoctorRegisterComponent } from './components/Doctor-Components/register
     AdminDashboardComponent,
     AdminPatientListComponent,
     AdminDoctorListComponent,
-    DoctorRegisterComponent
+    DoctorRegisterComponent,
+    AddMedicineComponent,
+    MedicineSuccessComponent,
+    AdminMedicineListComponent
   ],
   imports: [
     BrowserModule,

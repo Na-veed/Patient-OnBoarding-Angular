@@ -19,7 +19,10 @@
         <br>
         <h4>REGISTRATION SECTION</h4>
         <br>
+        <span class="mandatory">{{errorMessage}}</span>
+        <span *ngIf="patientForm.invalid==true"><span class="mandatory">Please fill details</span></span>
         <form novalidate [formGroup]="patientForm" (ngSubmit)="addPatient()">
+
             <fieldset>
                 <table>
                     <tr>
@@ -164,8 +167,8 @@
                 <br>
                 <button class="buttons" type="submit"[disabled]="patientForm.invalid">SUBMIT</button>
                 <button class="buttons" type="reset">CLEAR</button>
-                <span *ngIf="patientForm.invalid==true"><span class="mandatory">please fill details</span></span>
-                <span class="mandatory">{{errorMessage}}</span>
+                
+                
             </fieldset>
         </form>
         <br>
