@@ -12,28 +12,38 @@
     <div class="container">
         <span class="nav">
             <a href="">HOME</a>
-            <a href="patientDashboard">DASHBOARD</a>
-            <a href = "appointmentPage">BOOK AN APPOINTMENT</a>
+            <a href="adminDashboard">DASHBOARD</a>
             <a href="contactUsPage">CONTACT US</a>
             <a href="aboutUsPage">ABOUT US</a>
         </span>
         </div>
         <br>
-        <h4>BUY MEDICINES</h4>
-        <p>BUYING MEDICINES IS QUICKER AND SAFER NOW</p>
+        <h4>MEDICINES LIST</h4>
         <br>
+        <form novalidate [formGroup]="searchForm">
+        <input type = "email" formControlName = "searchByEmail">
+        <button class = "searchButtons" (click) = "getMedicineByEmail()" [disabled]="searchForm.invalid">SEARCH<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+          </svg></button>
+
+          </form>
         <p>{{errorMessage}}</p>
         <table class = "table">
             <div></div>
             <thead class="thead-dark">
                 <th>MEDICINE NUMBER</th>
+                <th>EMAIL</th>
                <th>MEDICINES</th>
                <th>QUANTITY</th>
                <th>PRICE</th>
+               <th>STATUS</th>
             </thead>
-                <tr *ngFor = "let med of medicines">
+                <tr *ngFor = "let med of medicinesList">
                 <td>
                     {{med.medicineNumber}}
+                </td>
+                <td>
+                    {{med.patientEmail}}
                 </td>
                 <td>
                     {{med.medicineName}}
@@ -44,15 +54,25 @@
                 <td>
                     {{med.price}}
                 </td>
+               <td>
+                   {{med.status}}
+               </td>
                 <td>
-                    <button class = "buttons" (click) = "buyMedicines(med.medicineNumber)">ADD TO CART</button>
-                </td>
-                <td>
-                    <button class = "deleteButtons" (click) = "ignoreMedicines(med.medicineNumber)">IGNORE</button>
+                    <button class = "deleteButtons" (click) = "ignoreMedicines(med.medicineNumber)">DELETE</button>
 
                 </td>
                 </tr>
         </table>
+        <br>
+        <form novalidate [formGroup]="filterForm">
+            FILTER BY STATUS : <select formControlName = "filter" style = "width: 200px;height: 30px;">
+                <option value = "success">Success</option>
+                <option value = "pending">Pending</option>
+            </select>
+            <button class = "searchButtons" (click)="getMedicineByStatus()">FILTER <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-filter" viewBox="0 0 16 16">
+                <path d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"/>
+              </svg></button>
+              </form>
         <br>
         <a class = "buttons" href = "patientDashboard">DASHBOARD</a>
         <a class = "buttons" href = "medicinesuccess">GO TO CART</a>
@@ -68,3 +88,4 @@
         <br>
         <br>
         </body>
+

@@ -3,10 +3,12 @@ import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
 import { Doctor } from '../model/doctor';
+import { Medicines } from '../model/medicines';
 import { Patient } from '../model/patient.ts';
 
 const doctorUrl:string =  "http://localhost:9090/doctors";
 const patientUrl:string =  "http://localhost:9090/patients";
+const medicinesUrl:string = "http://localhost:9090/medicines"
 
 
 @Injectable({
@@ -56,6 +58,13 @@ export class DoctorService {
       catchError(this.errorHandler)
     )
   
+  }
+
+  addMedicines(medicine:Medicines):Observable<Medicines>{
+    return this.httpClient.post<Medicines>(medicinesUrl + "/save",medicine,this.httpOptions).pipe(
+      retry(0),
+      catchError(this.errorHandler)
+    )
   }
 
   errorHandler(error: { error: { message: string; }; status: any; message: any; }) {

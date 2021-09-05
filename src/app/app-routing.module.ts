@@ -21,6 +21,9 @@ import { AdminLoginComponent } from './components/Admin-Components/admin-login/a
 import { ViewAccountComponentOfDoctor } from './components/Doctor-Components/view-account/view-account.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
 import { DoctorRegisterComponent } from './components/Doctor-Components/register-doctor/register-doctor.component';
+import { AddMedicineComponent } from './components/Doctor-Components/add-medicine/add-medicine.component';
+import { MedicineSuccessComponent } from './components/Patient-Components/medicine-success/medicine-success.component';
+import { AdminMedicineListComponent } from './components/Admin-Components/admin-medicine-list/admin-medicine-list.component';
 
 const routes: Routes = [
   {path:"registerPage" , component:PatientRegisterComponent},
@@ -36,7 +39,7 @@ const routes: Routes = [
   {path:"doctorDashboard", component: DoctorDashBoardComponent},
   {path:"doctorLoginPage", component: DoctorLoginComponent},
   {path:"appointmentSuccess", component: AppointmentSuccessComponent},
-  {path:"medicinePage", component: PatientBuyMedicinesComponent},
+  {path:"patientmedicinePage", component: PatientBuyMedicinesComponent},
   {path:"patientListPage",component: PatientListComponent},
   {path:"AdminPatientListPage", component: AdminPatientListComponent},
   {path: "appointmentListPage", component:AppointmentListComponent},
@@ -45,7 +48,10 @@ const routes: Routes = [
   {path: "adminLoginPage", component:AdminLoginComponent},
   {path:"doctorDetails",component:ViewAccountComponentOfDoctor},
   {path:"appointmentListPage",component:AppointmentListComponent},
-  {path:"registerDoctor",component:DoctorRegisterComponent}
+  {path:"registerDoctor",component:DoctorRegisterComponent},
+  {path:"doctorAddMedicine",component:AddMedicineComponent},
+  {path:"medicinesuccess",component:MedicineSuccessComponent},
+  {path:"adminMedicineList",component:AdminMedicineListComponent}
 ];
 
 @NgModule({
