@@ -19,7 +19,7 @@
         <br>
         <h4>REGISTRATION SECTION</h4>
         <br>
-        <div class="success">fields with * are mandatory</div>
+        <div class="success" style = "font-weight: 400px;">Note that:Fields with * are mandatory</div>
         <span class="mandatory">{{errorMessage}}</span>
         <span *ngIf="patientForm.invalid==true"><span class="mandatory">Please fill details</span></span>
         <form novalidate [formGroup]="patientForm" (ngSubmit)="addPatient()">
