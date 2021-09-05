@@ -16,4 +16,7 @@ export class DoctorDashBoardComponent implements OnInit {
   getAllPatients(){
     this.router.navigate(['AdminPatientListPage'])
   }
+  appointmentListPage(){
+    this.router.navigate(['appointmentListPage','doctorAppointments'])
+  }
 }

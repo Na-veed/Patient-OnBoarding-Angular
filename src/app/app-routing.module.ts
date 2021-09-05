@@ -44,7 +44,7 @@ const routes: Routes = [
   {path: "adminDashboard", component:AdminDashboardComponent},
   {path: "adminLoginPage", component:AdminLoginComponent},
   {path:"doctorDetails",component:ViewAccountComponentOfDoctor},
-  {path:"appointmentListPage",component:AppointmentListComponent},
+  {path:"appointmentListPage/:differ",component:AppointmentListComponent},
   {path:"registerDoctor",component:DoctorRegisterComponent}
 ];
 

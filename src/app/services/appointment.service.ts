@@ -28,6 +28,31 @@ addAppointment(appointment:Appointment): Observable<Appointment>{
     catchError(this.errorHandler)
   )
 }
+getAppointmentBySpecializationId( specializationId?:number): Observable<Appointment[]>{
+  return this.httpClient.get<Appointment[]>(appointmentUrl+'/'+`${specializationId}`).pipe(
+    retry(0),
+    catchError(this.errorHandler)
+  )
+}
+getAppointmentByConsultationType( consultationType?:string): Observable<Appointment[]>{
+  return this.httpClient.get<Appointment[]>(appointmentUrl+'/mode/'+`${consultationType}`).pipe(
+    retry(0),
+    catchError(this.errorHandler)
+  )
+}
+getAppointmentByDoctorId( doctorId?:number): Observable<Appointment[]>{
+  return this.httpClient.get<Appointment[]>(appointmentUrl+'/get/'+`${doctorId}`).pipe(
+    retry(0),
+    catchError(this.errorHandler)
+  )
+}
+getAppointmentByStatus( status?:string): Observable<Appointment[]>{
+  return this.httpClient.get<Appointment[]>(appointmentUrl+'/status/'+`${status}`).pipe(
+    retry(0),
+    catchError(this.errorHandler)
+  )
+}
+
 errorHandler(error: { error: { message: string; }; status: any; message: any; }) {
   let errorMessage = '';
   if (error.error instanceof ErrorEvent) {
