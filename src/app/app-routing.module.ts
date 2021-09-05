@@ -24,6 +24,7 @@ import { DoctorRegisterComponent } from './components/Doctor-Components/register
 import { AddMedicineComponent } from './components/Doctor-Components/add-medicine/add-medicine.component';
 import { MedicineSuccessComponent } from './components/Patient-Components/medicine-success/medicine-success.component';
 import { AdminMedicineListComponent } from './components/Admin-Components/admin-medicine-list/admin-medicine-list.component';
+import { LogoutComponentComponent } from './components/logout-component/logout-component.component';
 
 const routes: Routes = [
   {path:"registerPage" , component:PatientRegisterComponent},
@@ -51,7 +52,8 @@ const routes: Routes = [
   {path:"registerDoctor",component:DoctorRegisterComponent},
   {path:"doctorAddMedicine",component:AddMedicineComponent},
   {path:"medicinesuccess",component:MedicineSuccessComponent},
-  {path:"adminMedicineList",component:AdminMedicineListComponent}
+  {path:"adminMedicineList",component:AdminMedicineListComponent},
+  {path:"logoutPage",component:LogoutComponentComponent}
 ];
 
 @NgModule({
