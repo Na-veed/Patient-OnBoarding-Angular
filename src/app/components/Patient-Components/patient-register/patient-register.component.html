@@ -19,6 +19,7 @@
         <br>
         <h4>REGISTRATION SECTION</h4>
         <br>
+        <div class="success">fields with * are mandatory</div>
         <span class="mandatory">{{errorMessage}}</span>
         <span *ngIf="patientForm.invalid==true"><span class="mandatory">Please fill details</span></span>
         <form novalidate [formGroup]="patientForm" (ngSubmit)="addPatient()">
@@ -77,12 +78,15 @@
                     <tr>
                         <th>PASSWORD</th>
                         <th>:</th>
-                        <th><input type="password" placeholder="Enter your password" formControlName = "password"><span class="mandatory" >
+                        <th><input type="password" placeholder="Enter your password" formControlName = "password" ><span class="mandatory" >
                                 *</span></th>
                         <th
                             *ngIf="patientForm.get('password').hasError('required') && patientForm.get('password').touched">
                             <span class="mandatory">Please enter your pasword</span>
                         </th>
+                        <!-- <th *ngIf="patientForm.get('password').value.test('(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}')==false" >
+                            <span class="mandatory"> Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters.</span>
+                        </th> -->
                     </tr>
                     
 
@@ -95,6 +99,11 @@
                         <th
                             *ngIf="patientForm.get('confirmPassword').hasError('required') && patientForm.get('confirmPassword').touched">
                             <span class="mandatory">Please confirm your pasword</span>
+                            
+                        </th>
+                        <th
+                          *ngIf="patientForm.get('confirmPassword').value!=patientForm.get('password').value ">
+                          <span class="mandatory">password mismatch</span>
                         </th>
 
                     </tr>
