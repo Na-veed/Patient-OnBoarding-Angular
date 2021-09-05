@@ -60,6 +60,9 @@ const routes: Routes = [
   {path:"doctorAddMedicine",component:AddMedicineComponent},
   {path:"medicinesuccess",component:MedicineSuccessComponent},
   {path:"adminMedicineList",component:AdminMedicineListComponent},
+<<<<<<< HEAD
+  {path:"logoutPage",component:LogoutComponentComponent}
+=======
 
   { path: 'facilities', component:HospitalFacilitiesComponent },
   { path: 'scancentre', component:ScancentreComponent},
@@ -69,6 +72,7 @@ const routes: Routes = [
   { path: 'lab', component:LabComponent},
   { path: 'cantin', component:CantinComponent},
   { path: 'pwc', component:PwcComponent}
+>>>>>>> b5028958833079e213f7fecaec6dd53747b1e1f0
 ];
 
 @NgModule({

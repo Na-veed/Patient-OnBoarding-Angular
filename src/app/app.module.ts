@@ -30,6 +30,7 @@ import { DoctorRegisterComponent } from './components/Doctor-Components/register
 import { AddMedicineComponent } from './components/Doctor-Components/add-medicine/add-medicine.component';
 import { MedicineSuccessComponent } from './components/Patient-Components/medicine-success/medicine-success.component';
 import { AdminMedicineListComponent } from './components/Admin-Components/admin-medicine-list/admin-medicine-list.component';
+import { LogoutComponentComponent } from './components/logout-component/logout-component.component';
 
 
 
@@ -62,7 +63,8 @@ import { AdminMedicineListComponent } from './components/Admin-Components/admin-
     DoctorRegisterComponent,
     AddMedicineComponent,
     MedicineSuccessComponent,
-    AdminMedicineListComponent
+    AdminMedicineListComponent,
+    LogoutComponentComponent
   ],
   imports: [
     BrowserModule,

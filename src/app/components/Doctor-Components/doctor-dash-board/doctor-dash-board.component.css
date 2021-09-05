@@ -24,22 +24,40 @@ header{
     color: skyblue
 }
 
-h4{
-    text-align: center;
-}
-
-table{
-    margin-left: 37%;
-}
-
-.table2{
-    margin-left: 27%;
-}
-
-th{
-	text-align:center;
-	padding: 5px;
+.headerRight{
     font-weight: 400;
+    color: black;
+    padding: 20px;
+    text-decoration: none;
+    
+}
+
+footer{
+    background-color:skyblue;
+   text-align:center;
+   color: black;  
+   font-size: 10px;
+}
+
+.findUs{
+    font-weight: 500;
+    font-size: medium;
+}
+
+
+a{
+    text-decoration: none;
+    color:black;
+    padding-left: 30px;
+}
+
+.skyblue{
+    background-color: skyblue;
+}
+
+.black{
+    background-color: black;
+    color: white;
 }
 
 .buttons {
@@ -57,46 +75,4 @@ th{
 	color:black;
     background-color:whitesmoke;
     border: 2px solid black;
-}
-
-.mandatory{
-    color:red;
-}
-
-footer{
-    background-color:skyblue;
-   text-align:center;
-   color: black;  
-   font-size: 10px;
-}
-
-a{
-    text-decoration: none;
-    color:black;
-    padding-left: 30px;
-}
-
-input[type = "text"]{
-    width: 200px;
-}
-
-input[type = "password"]{
-    width:200px;
-}
-
-.bloodGroup{
-    width:200px;
-}
-
-input[type = "email"]{
-    width:200px;
-}
-
-input[type = "date"]{
-    width: 200px;
-}
-
-.findUs{
-    font-weight: 500;
-    font-size: medium;
 }
