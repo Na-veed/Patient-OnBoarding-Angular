@@ -29,7 +29,8 @@ h4{
 }
 
 table{
-    margin-left: 30%;
+    margin-left: 37%;
+    font-weight: 400px;
 }
 
 .table2{
@@ -92,6 +93,13 @@ input[type = "email"]{
     width:200px;
 }
 
+input[type = "text"]{
+    width:200px;
+}
+
+input[type = "number"]{
+    width:200px;
+}
 input[type = "date"]{
     width: 200px;
 }

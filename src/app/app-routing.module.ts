@@ -26,12 +26,13 @@ import { MedicineSuccessComponent } from './components/Patient-Components/medici
 import { AdminMedicineListComponent } from './components/Admin-Components/admin-medicine-list/admin-medicine-list.component';
 import { HospitalFacilitiesComponent } from './components/hospital-facilities/hospital-facilities.component';
 import { ScancentreComponent } from './components/scancentre/scancentre.component';
-import { PharmacyComponent } from './components/pharmacy/pharmacy.component';
 import { InfrastructureComponent } from './components/infrastructure/infrastructure.component';
 import { AmbulanceComponent } from './components/ambulance/ambulance.component';
 import { LabComponent } from './components/lab/lab.component';
 import { CantinComponent } from './components/cantin/cantin.component';
 import { PwcComponent } from './components/pwc/pwc.component';
+import { LogoutComponentComponent } from './components/logout-component/logout-component.component';
+import { PharmacyComponent } from './components/lab/pharmacy/pharmacy.component';
 
 const routes: Routes = [
   {path:"registerPage" , component:PatientRegisterComponent},
@@ -60,10 +61,7 @@ const routes: Routes = [
   {path:"doctorAddMedicine",component:AddMedicineComponent},
   {path:"medicinesuccess",component:MedicineSuccessComponent},
   {path:"adminMedicineList",component:AdminMedicineListComponent},
-<<<<<<< HEAD
-  {path:"logoutPage",component:LogoutComponentComponent}
-=======
-
+  {path:"logoutPage",component:LogoutComponentComponent},
   { path: 'facilities', component:HospitalFacilitiesComponent },
   { path: 'scancentre', component:ScancentreComponent},
   { path: 'pharmacy', component:PharmacyComponent},
@@ -72,7 +70,6 @@ const routes: Routes = [
   { path: 'lab', component:LabComponent},
   { path: 'cantin', component:CantinComponent},
   { path: 'pwc', component:PwcComponent}
->>>>>>> b5028958833079e213f7fecaec6dd53747b1e1f0
 ];
 
 @NgModule({

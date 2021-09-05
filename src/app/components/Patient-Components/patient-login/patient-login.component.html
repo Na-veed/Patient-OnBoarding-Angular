@@ -20,8 +20,13 @@
         <br>
         <h4>LOGIN SECTION</h4>
         <br>
+        <span class="mandatory">{{errorMessage}}</span>
+        <span *ngIf="patientLoginForm.invalid==true"><span class="mandatory">Please fill all the details</span></span>
+        <br><br>
+
         <form novalidate [formGroup]="patientLoginForm" (ngSubmit)="loginPatient()">
             <fieldset>
+                
                 <table>
                     <tr>
                         <th>EMAIL ID</th>
@@ -46,8 +51,7 @@
                    </table>
                 <br>
                 <button class="buttons" type="submit" [disabled]='patientLoginForm.invalid' (click)= "loginPatient()">LOGIN</button>
-                <span *ngIf="patientLoginForm.invalid==true"><span class="mandatory">please fill details</span></span>
-                <span class="mandatory">{{errorMessage}}</span>
+                
 
                 <br>
                 <br>

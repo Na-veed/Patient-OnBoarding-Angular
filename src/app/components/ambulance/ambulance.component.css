@@ -1,11 +1,38 @@
 @charset "ISO-8859-1";
 
 header {
-	background-color: #CCEEFF;
+	background-color:white;
 	color: black;
 	font-size: 20px;
 	margin: 0;
 }
+
+header{
+    font-size: small;
+    padding: 5px;
+    text-align: right;
+    color: black;
+    background-color:skyblue;
+}
+
+.nav{
+    background-color: white;
+}
+.nav a{
+    font-weight: 400;
+    color: black;
+    padding: 20px;
+    text-decoration: none;
+}
+
+.nav a:hover{
+    color:skyblue;
+}
+
+.nav a:active{
+    color: skyblue
+}
+
 
 body {
 	background-color: white;
@@ -13,89 +40,8 @@ body {
 	color: black;
 }
 
-.nav {
-	background-color: black;
-	overflow: hidden;
-}
-
-.nav a {
-	float: left;
-	color: white;
-	text-align: center;
-	padding: 14px 16px;
-	text-decoration: none;
-	font-size: 14px;
-}
-
-.nav right {
-	margin-left: 0px;
-}
-h3{
-	colour :#CCEEFF;
-}
-
-h4 {
-	font-weight: lighter;
-}
-
-.nav a:hover {
-	background-color:black;
-	color:#000000;
-}
-
-.nav a:active {
-	background-color: black;
-	color:#000000;
-}
-
-.nav-right {
-	margin-right: 0px;
-	float: right;
-}
-
-.blackheading {
-	background-color: black;
-	color: white;
-}
 
 
-form {
-	padding: 4px 4px;
-	background-color: black;
-	color: white;
-	margin-right: 0px;
-}
-
-.container a:link {
-	color: white;
-	text-decoration: none;
-	background-color: black;
-	border: none;
-	padding: 10px 14px;
-	font-size: 15px;
-}
-
-.col-sm-4 a:hover{
-	color:#a6a6a6;
-	background-color: #CCEEFF;
-	border: 2px solid black;
-}
-
-.col-sm-6 a:hover{
-	color:#a6a6a6;
-	background-color: #CCEEFF;
-	border: 2px solid black;
-}
-
-.container a:visited {
-	color: white;
-}
-
-.container a:hover{
-	color:black;
-	background-color: #CCEEFF;
-	border: 2px solid black;
-}
 
 .buttons{
 		color: white;

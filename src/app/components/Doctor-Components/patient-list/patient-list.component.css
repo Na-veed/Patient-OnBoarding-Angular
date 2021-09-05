@@ -1,0 +1,105 @@
+header{
+    font-size: small;
+    padding: 5px;
+    text-align: right;
+    color: black;
+    background-color:skyblue;
+}
+
+.nav{
+    background-color: white;
+}
+.nav a{
+    font-weight: 400;
+    color: black;
+    padding: 20px;
+    text-decoration: none;
+}
+
+.nav a:hover{
+    color:skyblue;
+}
+
+.nav a:active{
+    color: skyblue
+}
+
+h4{
+    text-align: center;
+}
+
+
+
+th{
+	text-align:center;
+	padding: 10px;
+    font-weight: 400;
+
+}
+
+.buttons {
+    align-content: center;
+	color:black;
+    background-color:skyblue;
+    text-decoration:none;;
+    border:none;
+    padding:8px 14px;
+    font-size:15px;
+    margin-right: 10px;
+}
+.buttons:hover{
+
+	color:black;
+    background-color:whitesmoke;
+    border: 2px solid black;
+}
+
+.searchButtons{
+    align-content: center;
+	color:black;
+    background-color:skyblue;
+    text-decoration:none;;
+    border:none;
+    padding:5px 10px;
+    font-size:15px;
+    margin-right: 10px;
+}
+
+.searchButtons:hover{
+	color:black;
+    background-color:whitesmoke;
+    border: 2px solid black;
+}
+
+.deleteButtons{
+    align-content: center;
+	color:black;
+    background-color:skyblue;
+    text-decoration:none;;
+    border:none;
+    padding:5px 10px;
+    font-size:15px;
+    margin-right: 10px;
+}
+
+.deleteButtons:hover{
+    color:white;
+    background-color: red;
+}
+
+.mandatory{
+    color:red;
+}
+
+footer{
+    background-color:skyblue;
+   text-align:center;
+   color: black;  
+   font-size: 10px;
+}
+
+a{
+    text-decoration: none;
+    color:black;
+    padding-left: 30px;
+}

@@ -19,6 +19,9 @@ export class PatientBuyMedicinesComponent implements OnInit {
     this.patientService.getMedicines(localStorage.getItem('userEmail')).subscribe((data)=>{
       this.medicines=data
       console.log(this.medicines)
+      if(this.medicines == null){
+        this.errorMessage = "Medicine have not yet alloted for you"
+      }
     },error=>{
       this.errorMessage = "Medicine have not yet alloted for your email Id"
     })
