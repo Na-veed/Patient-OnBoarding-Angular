@@ -11,16 +11,18 @@
 <body align="center">
     <div class="container">
         <span class="nav">
-            <a href="">HOME</a>
+            <a href="adminDashboard">HOME</a>
             <a href="adminDashboard">DASHBOARD</a>
             <a href="contactUsPage">CONTACT US</a>
             <a href="aboutUsPage">ABOUT US</a>
         </span>
         <br>
         <br>
-        <input type = "email" placeholder="Enter email Id"><button class = "searchButtons" (click)= "getPatientByEmailId()"> SEARCH <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+        <form novalidate [formGroup]="searchForm">
+        <input type = "email" placeholder="Enter email Id" formControlName="emailForSearch"><button class = "searchButtons" (click)= "getPatientByEmailId()" [disabled]="searchForm.invalid"> SEARCH <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
             <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
           </svg></button>
+          </form>
           <br>
           <br>
           <p style = "color:red">{{deleteMessage}}</p>
@@ -91,12 +93,10 @@
                     <td><button class = "deleteButtons" (click) = "deletePatient(patient.patientEmail)" >DELETE</button>
                     </td>
                     
-                    
                 </tr>
-               
             </table>
             <br>
-            <a class = "buttons" href = "adminDashBoard">GO TO DASHBOARD</a>
+            <a class = "buttons" href = "adminDashboard">GO TO DASHBOARD</a>
             <a class = "buttons" href = "">HOME</a>
         </div>
         <br>

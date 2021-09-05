@@ -20,6 +20,7 @@ import { AdminDashboardComponent } from './components/Admin-Components/admin-das
 import { AdminLoginComponent } from './components/Admin-Components/admin-login/admin-login.component';
 import { ViewAccountComponentOfDoctor } from './components/Doctor-Components/view-account/view-account.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
+import { DoctorRegisterComponent } from './components/Doctor-Components/register-doctor/register-doctor.component';
 
 const routes: Routes = [
   {path:"registerPage" , component:PatientRegisterComponent},
@@ -42,7 +43,9 @@ const routes: Routes = [
   {path: "DoctorListPage", component:DoctorListComponent},
   {path: "adminDashboard", component:AdminDashboardComponent},
   {path: "adminLoginPage", component:AdminLoginComponent},
-  {path:"doctorDetails",component:ViewAccountComponentOfDoctor}
+  {path:"doctorDetails",component:ViewAccountComponentOfDoctor},
+  {path:"appointmentListPage",component:AppointmentListComponent},
+  {path:"registerDoctor",component:DoctorRegisterComponent}
 ];
 
 @NgModule({

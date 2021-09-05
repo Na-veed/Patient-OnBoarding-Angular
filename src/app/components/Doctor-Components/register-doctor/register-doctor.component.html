@@ -1,0 +1,125 @@
+<header>
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-phone">
+        <path
+            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+        </path>
+    </svg>
+    - 044-2388 0477
+</header>
+
+<body align="center">
+    <div class="container">
+        <div class="nav">
+            <a routerLink="">HOME</a>
+            <a routerLink="patientDashboard">DASHBOARD</a>
+            <a routerLink="aboutUsPage">ABOUT US</a>
+            <a routerLink="contactUsPage">CONTACT US</a>
+        </div>
+        </div>
+        <br>
+        <h4>ADD DOCTOR</h4>
+        <br>
+        <form novalidate [formGroup]="addDoctorForm" (ngSubmit)="addDoctor()">
+            <fieldset>
+                <table>
+                    <tr>
+                        <th>DOCTOR ID</th>
+                        <th>:</th>
+                        <th><input type="number" formControlName="doctorId"><span
+                                class="mandatory"> </span></th>
+                        <th
+                            *ngIf="addDoctorForm.get('doctorId').hasError('required') && addDoctorForm.get('doctorId').touched">
+                            <span class="mandatory">Doctor Id is mandatory</span>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th> NAME</th>
+                        <th>:</th>
+                        <th><input type="text" formControlName="doctorName"><span
+                                class="mandatory"> </span></th>
+                        <th
+                            *ngIf="addDoctorForm.get('doctorName').hasError('required') && addDoctorForm.get('doctorName').touched">
+                            <span class="mandatory"> Name is mandatory</span>
+                        </th>
+
+                    </tr>
+                    <tr>
+                        <th>PASSWORD</th>
+                        <th>:</th>
+                        <th><input type="password" formControlName="password" ><span
+                                class="mandatory"> </span></th>
+                        <th
+                            *ngIf="addDoctorForm.get('password').hasError('required') && addDoctorForm.get('password').touched">
+                            <span class="mandatory">Password  is mandatory</span>
+                        </th>
+
+                    </tr>
+                    <tr>
+                        <th>SPECIALIZATION</th>
+                        <th>:</th>
+                        <th><input type="text" formControlName="specialization"><span
+                                class="mandatory"> </span></th>
+                        <th
+                            *ngIf="addDoctorForm.get('specialization').hasError('required') && addDoctorForm.get('specialization').touched">
+                            <span class="mandatory">Specialization is mandatory</span>
+                        </th>
+
+                    </tr>
+
+                
+                    <tr>
+                        <th>SPECIALIZATION ID</th>
+                        <th>:</th>
+                        <th><input type="number" formControlName="specializationId"><span
+                                class="mandatory"> </span></th>
+                        <th
+                            *ngIf="addDoctorForm.get('specializationId').hasError('required') && addDoctorForm.get('specializationId').touched">
+                            <span class="mandatory">Specialization Id is mandatory</span>
+                        </th>
+
+                    </tr>
+                    <tr>
+                        <th>QUALIFICATION</th>
+                        <th>:</th>
+                        <th><input type="text" formControlName="qualification"></th>
+                    </tr>
+                    <tr >
+                        <th>EXPERIENCE</th>
+                        <th>:</th>
+                        <th><input type="text"  formControlName = "experience"></th>
+                    </tr>
+                    <tr>
+                        <th> PHONE NUMBER</th>
+                        <th>:</th>
+                        <th><input type="number" formControlName="phoneNumber"></th>
+                    </tr>
+                    <tr>
+                        <th>   EMAIL</th>
+                        <th>:</th>
+                        <th><input type="email" formControlName="email"></th>
+                    </tr>
+                    <tr>
+
+                    </tr>
+
+                </table>
+                <br>
+                <button type = "submit" class = "buttons">
+                    Save
+                </button>
+                <button type = "reset" class = "buttons">
+                    CLEAR
+                </button>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                </fieldset>
+                </form>
+                </body>
+                
+
+

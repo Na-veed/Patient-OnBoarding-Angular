@@ -3,10 +3,12 @@ import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
 import { Admin } from '../model/admin';
+import { Appointment } from '../model/appointment';
 import { Patient } from '../model/patient.ts';
 
 const adminUrl:string = "http://localhost:9090/admin";
 const patientUrl:string =  "http://localhost:9090/patients";
+const appointmentUrl:string="http://localhost:9090/appointments";
 
 @Injectable({
   providedIn: 'root'
@@ -28,7 +30,13 @@ export class AdminService {
   }
 
   getAllPatients():Observable<Patient[]>{
-    return this.httpClient.get<Patient[]>(patientUrl+"").pipe(
+    return this.httpClient.get<Patient[]>(patientUrl).pipe(
+      retry(1),
+      catchError(this.errorHandler)
+      )
+  }
+  getAllAppointments():Observable<Appointment[]>{
+    return this.httpClient.get<Appointment[]>(appointmentUrl).pipe(
       retry(1),
       catchError(this.errorHandler)
       )

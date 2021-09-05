@@ -27,6 +27,7 @@ import { AdminDashboardComponent } from './components/Admin-Components/admin-das
 import { AdminPatientListComponent } from './components/Admin-Components/admin-patient-list/admin-patient-list.component';
 import { DoctorService } from './services/doctor.service';
 import { AdminDoctorListComponent } from './components/Admin-Components/admin-doctor-list/admin-doctor-list.component';
+import { DoctorRegisterComponent } from './components/Doctor-Components/register-doctor/register-doctor.component';
 
 
 
@@ -54,7 +55,8 @@ import { AdminDoctorListComponent } from './components/Admin-Components/admin-do
     AppointmentListComponent,
     AdminDashboardComponent,
     AdminPatientListComponent,
-    AdminDoctorListComponent
+    AdminDoctorListComponent,
+    DoctorRegisterComponent
   ],
   imports: [
     BrowserModule,

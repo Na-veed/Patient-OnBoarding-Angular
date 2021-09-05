@@ -1,5 +1,6 @@
 import { ThrowStmt } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Patient } from 'src/app/model/patient.ts';
 import { AdminService } from 'src/app/services/admin.service';
@@ -12,16 +13,21 @@ import { PatientService } from 'src/app/services/patient.service';
 })
 export class AdminPatientListComponent implements OnInit {
 
-  constructor(public adminService:AdminService,public patientService:PatientService,public router:Router) { }
+  constructor(public adminService:AdminService,public patientService:PatientService,public router:Router,public formBuilder: FormBuilder) { }
 
   patientList: Patient[] = [];
   errorMessage?:string;
   deleteMessage?:string;
   patient?:Patient;
+  searchForm?: FormGroup;
 
  
 
-  ngOnInit(): void {
+  ngOnInit(): void { 
+    this.searchForm = this.formBuilder.group({
+    emailForSearch: ['', Validators.required]
+    })
+
     this.adminService.getAllPatients().subscribe((data:Patient[])=>{
       console.log("Patients called from spring")
       this.patientList = data;
@@ -43,6 +49,15 @@ export class AdminPatientListComponent implements OnInit {
   }
 
   getPatientByEmailId(){
+    this.patientService.getPatientByEmail(this.searchForm.get('emailForSearch').value).subscribe((data:Patient)=>{
+      this.patientList=[]
+      if(data!=null)
+      this.patientList[0]= data;
+      else
+      this.errorMessage = "No records found"
+      console.log(this.patientList)
+    },error => {this.errorMessage = "No records found"
+   })
 
   }
 }
