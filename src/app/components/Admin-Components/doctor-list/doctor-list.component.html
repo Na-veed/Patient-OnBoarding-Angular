@@ -28,12 +28,12 @@
           <p style = "color:red">{{errorMessage}}</p>
           <!-- <p style = "color:red">{{deleteMessage}}</p>
           <p style = "color:red">{{errorMessage}}</p> -->
-        <h4>DOCTOR LIST</h4>
+        <h4 style = "background-color: skyblue;">DOCTOR LIST</h4>
         <br>
 
             <table class = "table">
                 <thead>
-                    <tr>
+                  
                     <th>
                         ID
                     </th>
@@ -58,10 +58,7 @@
                     <th>
                         EMAIL
                     </th>
-                    <th>
-                        ACTIONS
-                    </th>
-                    </tr>
+                    
                 </thead>
                 <tr *ngFor = "let doctor of doctorList">
                
@@ -81,15 +78,14 @@
 
                     <td>{{doctor.email}}</td>
                
-                    <td><button class = "deleteButtons" >DELETE</button>
-                    </td>
+                    
                     
                     
                 </tr>
                
             </table>
             <br>
-            <a class = "buttons" href = "adminDashBoard">GO TO DASHBOARD</a>
+            <a class = "buttons" href = "adminDashboard">GO TO DASHBOARD</a>
             <a class = "buttons" href = "">HOME</a>
         </div>
         <br>

@@ -96,6 +96,10 @@ input[type = "date"]{
     width: 200px;
 }
 
+input[type = "number"]{
+    width:200px;
+}
+
 .findUs{
     font-weight: 500;
     font-size: medium;

@@ -18,14 +18,14 @@
         </div>
         <br>
         <br>
-        <h4>LOGIN SECTION</h4>
+        <h4 style="background-color: skyblue;">LOGIN SECTION</h4>
         <br>
         <p style = "color:red">{{errorMessage}}</p>
         <form novalidate [formGroup]="adminLoginForm" (ngSubmit)="loginAdmin()">
             <fieldset>
                 <table>
                     <tr>
-                        <th>ADMIN ID</th>
+                        <th>ADMIN NAME</th>
                         <th>:</th>
                         <th><input type="text" placeholder="Enter your user Id" formControlName="adminId">
                         <th

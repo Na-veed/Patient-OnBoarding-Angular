@@ -40,4 +40,5 @@ export class DoctorListComponent implements OnInit {
    })
   }
 
+
 }

@@ -58,7 +58,6 @@ export class AppointmentListComponent implements OnInit {
                 }
                 console.log(this.appointmentList)
               },error => {this.errorMessage = "No records found"
-              console.log("error ayya saaami")
              })
             }
   }
