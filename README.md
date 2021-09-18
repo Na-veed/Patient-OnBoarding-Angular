@@ -64,7 +64,6 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
   <li>Postman</li>
 </ul>
 
-<h3>User Interfaces</h3>
-<img src = "C:\Users\Imran\Documents\GitHub\Patient-OnBoarding-Angular\src\assets\home.JPG" >
+<p>Follow this link to our backend project <a href = "https://github.com/PavanSaiSheshetti/PatientOnboardingApp_Web">Spring-Project</a><p>
   
   
